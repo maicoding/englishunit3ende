@@ -59,7 +59,7 @@ window.ENGLISH_VOCAB_DATA = [
       "geheimnisvoll"
     ],
     "example": "She answered mysteriously, 'Wait and see.'",
-    "cloze": "She answered mysteriously, 'Wait and see.' [mysterious]",
+    "cloze": "It was a ___ story.",
     "clozeAnswer": "mysterious",
     "wordType": "adjective",
     "difficulty": 1,
@@ -648,7 +648,7 @@ window.ENGLISH_VOCAB_DATA = [
       "außer Acht lassen"
     ],
     "example": "You ignored my last five texts.",
-    "cloze": "You ignored my last five texts. [to ignore]",
+    "cloze": "Do not ___ important messages.",
     "clozeAnswer": "ignore",
     "wordType": "verb",
     "difficulty": 3,
@@ -1060,8 +1060,8 @@ window.ENGLISH_VOCAB_DATA = [
       "aussteigen"
     ],
     "example": "He got off at 51st Street.",
-    "cloze": "He got off at 51st Street. [to get off]",
-    "clozeAnswer": "get off",
+    "cloze": "He ___ at 51st Street.",
+    "clozeAnswer": "got off",
     "wordType": "verb",
     "difficulty": 3,
     "spelling": {
@@ -1119,8 +1119,8 @@ window.ENGLISH_VOCAB_DATA = [
       "fehlen"
     ],
     "example": "One name was missing.",
-    "cloze": "One name was missing. [to be missing]",
-    "clozeAnswer": "be missing",
+    "cloze": "One name was ___.",
+    "clozeAnswer": "missing",
     "wordType": "verb",
     "difficulty": 4,
     "spelling": {
@@ -2772,8 +2772,8 @@ window.ENGLISH_VOCAB_DATA = [
       "beisetzen"
     ],
     "example": "The remains were interred there.",
-    "cloze": "The remains were interred there. [to inter]",
-    "clozeAnswer": "inter",
+    "cloze": "The remains were ___ there.",
+    "clozeAnswer": "interred",
     "wordType": "verb",
     "difficulty": 4,
     "spelling": {
@@ -3019,8 +3019,8 @@ window.ENGLISH_VOCAB_DATA = [
       "rauchen"
     ],
     "example": "Almost everyone was smoking.",
-    "cloze": "Almost everyone was smoking. [to smoke]",
-    "clozeAnswer": "smoke",
+    "cloze": "Almost everyone was ___.",
+    "clozeAnswer": "smoking",
     "wordType": "verb",
     "difficulty": 4,
     "spelling": {
@@ -3324,7 +3324,7 @@ window.ENGLISH_VOCAB_DATA = [
       "Blatt"
     ],
     "example": "The leaves protected the soil.",
-    "cloze": "The leaves protected the soil. [leaf]",
+    "cloze": "A ___ protected the soil.",
     "clozeAnswer": "leaf",
     "wordType": "noun_or_other",
     "difficulty": 2,
@@ -3475,8 +3475,8 @@ window.ENGLISH_VOCAB_DATA = [
       "aufschnüren"
     ],
     "example": "She untied the string.",
-    "cloze": "She untied the string. [to untie]",
-    "clozeAnswer": "untie",
+    "cloze": "She ___ the string.",
+    "clozeAnswer": "untied",
     "wordType": "verb",
     "difficulty": 4,
     "spelling": {
@@ -6120,7 +6120,7 @@ window.ENGLISH_VOCAB_DATA = [
       "Wolf"
     ],
     "example": "Wolves live in packs.",
-    "cloze": "Wolves live in packs. [wolf]",
+    "cloze": "A ___ lives in a pack.",
     "clozeAnswer": "wolf",
     "wordType": "noun_or_other",
     "difficulty": 1,
@@ -6979,8 +6979,8 @@ window.ENGLISH_VOCAB_DATA = [
       "notieren"
     ],
     "example": "The detective took down the suspect.",
-    "cloze": "The detective took down the suspect. [to take down]",
-    "clozeAnswer": "take down",
+    "cloze": "The detective ___ the suspect.",
+    "clozeAnswer": "took down",
     "wordType": "verb",
     "difficulty": 5,
     "spelling": {
@@ -7563,8 +7563,8 @@ window.ENGLISH_VOCAB_DATA = [
       "ins Rollen bringen"
     ],
     "example": "The project got underway.",
-    "cloze": "The project got underway. [to get underway]",
-    "clozeAnswer": "get underway",
+    "cloze": "The project ___.",
+    "clozeAnswer": "got underway",
     "wordType": "verb",
     "difficulty": 5,
     "spelling": {
@@ -7674,8 +7674,8 @@ window.ENGLISH_VOCAB_DATA = [
       "auf dem Spiel stehen"
     ],
     "example": "My future is at stake.",
-    "cloze": "My future is at stake. [to be at stake]",
-    "clozeAnswer": "be at stake",
+    "cloze": "My future is ___.",
+    "clozeAnswer": "at stake",
     "wordType": "verb",
     "difficulty": 5,
     "spelling": {
