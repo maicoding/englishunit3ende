@@ -434,6 +434,23 @@
       line-height: 1.4;
     }
 
+    .paper-help {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+      padding: 10px 12px;
+    }
+
+    .paper-help summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .paper-help p {
+      margin: 8px 0 0;
+    }
+
     .test-setup {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -793,7 +810,6 @@
           <button class="active" data-mode="flash">Karte</button>
           <button data-mode="choice">Quiz</button>
           <button data-mode="cloze">Lücke</button>
-          <button data-mode="sentence">Satz</button>
           <button data-mode="spelling">Spelling</button>
           <button data-mode="analysis">Analyse</button>
           <button data-mode="test">Test</button>
@@ -1479,6 +1495,10 @@
           ${metaLine(word)}
           <div class="word" id="paperWord" ${canPreview ? "" : "hidden"}>${visualWord(word)}</div>
           <p class="example" id="paperPrompt">${startPrompt}</p>
+          <details class="paper-help">
+            <summary>Warum Papier?</summary>
+            <p class="mini">Handschrift zwingt zum Abruf ohne Auswahl. Erst erinnern, dann schreiben, dann vergleichen. Schreibfehler ehrlich markieren, damit genau diese Wörter schneller wiederkommen.</p>
+          </details>
           <p class="mini" hidden>Vergleiche streng: Ist das Wort ganz falsch, oder stimmt die Bedeutung und nur die Schreibweise ist falsch?</p>
         </article>
         <div class="actions">
@@ -1515,7 +1535,6 @@
           ${metaLine(word)}
           <div class="translation" hidden>${solutionHtml(word)}</div>
           ${exampleBlock(word)}
-          <p class="mini">Schreibe erst deine Antwort auf ein leeres Blatt. Danach aufdecken und selbst bewerten.</p>
         </article>
         <div class="actions">
           <button class="accent" id="showAnswer">Antwort zeigen</button>
