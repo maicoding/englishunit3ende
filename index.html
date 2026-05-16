@@ -227,6 +227,22 @@
       font-weight: 750;
     }
 
+    .trap-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .trap {
+      border: 1px solid #fed7aa;
+      background: #fff7ed;
+      color: var(--accent-2);
+      border-radius: 8px;
+      padding: 7px 9px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
     .word {
       font-size: 56px;
       line-height: 1;
@@ -466,7 +482,8 @@
     .chunk.tricky {
       background: #fff7ed;
       color: var(--accent-2);
-      box-shadow: inset 0 -3px 0 rgba(180, 83, 9, .25);
+      border: 1px solid #fed7aa;
+      box-shadow: inset 0 -4px 0 rgba(180, 83, 9, .30);
     }
 
     .letter-map {
@@ -1156,15 +1173,6 @@
       renderList();
     }
 
-    function speak(text) {
-      if (!("speechSynthesis" in window)) return;
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = "en-US";
-      utterance.rate = .88;
-      speechSynthesis.cancel();
-      speechSynthesis.speak(utterance);
-    }
-
     function renderExercise() {
       const word = state.current || pickWord();
       state.current = word;
@@ -1282,9 +1290,48 @@
       return [];
     }
 
+    function spellingFocus(word) {
+      const text = word.en.toLowerCase();
+      const items = [];
+      const patternLabels = [
+        ["igh", "igh"],
+        ["ough", "ough"],
+        ["tion", "-tion"],
+        ["sion", "-sion"],
+        ["ious", "-ious"],
+        ["eous", "-eous"],
+        ["ie", "ie"],
+        ["ei", "ei"],
+        ["ea", "ea"],
+        ["ee", "ee"],
+        ["oo", "oo"],
+        ["ou", "ou"],
+        ["ow", "ow"],
+        ["ph", "ph"],
+        ["th", "th"],
+        ["ch", "ch"],
+        ["sh", "sh"],
+        ["ck", "ck"],
+        ["qu", "qu"],
+        ["wr", "wr"],
+        ["kn", "kn"],
+        ["gn", "gn"],
+        ["mb", "mb"]
+      ];
+      patternLabels.forEach(([pattern, label]) => {
+        if (text.includes(pattern)) items.push(label);
+      });
+      const doubles = [...new Set((text.match(/([a-z])\1/g) || []))];
+      doubles.forEach(pair => items.push(`Doppel-${pair[0]}`));
+      if (text.includes("-")) items.push("Bindestrich");
+      if (text.includes("'")) items.push("Apostroph");
+      if (text.includes(" ")) items.push("als ganze Wortgruppe");
+      return [...new Set(items)];
+    }
+
     function trickyIndexesForWord(word) {
       const text = typeof word === "string" ? word : word.en;
-      const indexes = trickyIndexesForWord(value);
+      const indexes = trickyIndexes(text);
       spellingTraps(word).forEach(trap => {
         const lower = text.toLowerCase();
         const target = String(trap).toLowerCase();
@@ -1302,12 +1349,15 @@
       const chunks = typeof value === "object" && value.spelling && Array.isArray(value.spelling.chunks) ? value.spelling.chunks : [];
       if (chunks.length > 1) {
         return chunks.map(chunk => {
-          const indexes = trickyIndexesForWord({en: chunk, spelling: {traps: spellingTraps(value)}});
-          const isTricky = [...chunk].some((_, index) => indexes.has(index));
-          return `<span class="chunk ${isTricky ? "tricky" : ""}">${escapeHtml(chunk)}</span>`;
+          const textPart = typeof chunk === "string" ? chunk : chunk.text;
+          if (!textPart) return "";
+          if (/^\s+$/.test(textPart)) return escapeHtml(textPart);
+          const indexes = trickyIndexes(textPart);
+          const isTricky = [...textPart].some((_, index) => indexes.has(index));
+          return `<span class="chunk ${isTricky ? "tricky" : ""}">${escapeHtml(textPart)}</span>`;
         }).join("");
       }
-      const indexes = trickyIndexes(text);
+      const indexes = trickyIndexesForWord(value);
       let html = "";
       let buffer = "";
       let tricky = indexes.has(0);
@@ -1331,7 +1381,6 @@
     }
 
     function metaLine(word) {
-      const level = Number(word.difficulty || 2);
       const labels = {
         phrase: "Mehrwortausdruck",
         phrasal_verb: "Phrasal verb",
@@ -1340,13 +1389,17 @@
         adjective: "Adjektiv",
         adverb: "Adverb"
       };
-      const difficulty = level >= 3 ? "schwer" : level === 2 ? "mittel" : "leicht";
       return `
         <div class="meta-line">
           <span class="meta-pill">${labels[word.wordType] || "Vokabel"}</span>
-          <span class="meta-pill">Schreibung: ${difficulty}</span>
         </div>
       `;
+    }
+
+    function trapList(word) {
+      const focus = spellingFocus(word);
+      if (!focus.length) return "";
+      return `<div class="trap-list">${focus.map(item => `<span class="trap">${escapeHtml(item)}</span>`).join("")}</div>`;
     }
 
     function clozeText(word) {
@@ -1409,9 +1462,9 @@
     }
 
     function spellingHint(word) {
-      const traps = spellingTraps(word);
-      if (traps.length) {
-        return `Merke dir besonders: ${traps.join(" · ")}. Sieh das Wort als Blöcke, decke es ab und schreibe es danach ohne Vorlage.`;
+      const focus = spellingFocus(word);
+      if (focus.length) {
+        return `Merke dir besonders: ${focus.join(" · ")}. Sieh die markierten Stellen an, decke das Wort ab und schreibe es danach ohne Vorlage.`;
       }
       const lower = word.en.toLowerCase();
       const hints = [];
@@ -1421,7 +1474,7 @@
       if (lower.includes("igh")) hints.push("igh ist ein gemeinsamer Lautblock.");
       if (lower.includes("ie") || lower.includes("ei")) hints.push("ie/ei-Reihenfolge genau anschauen.");
       if (lower.includes("ou") || lower.includes("ow") || lower.includes("ea") || lower.includes("ee")) hints.push("Vokalgruppe als Bild merken.");
-      return hints.length ? hints.join(" ") : "Sprich das Wort langsam, zerlege es in Teile und merke dir die Wortform als Bild.";
+      return hints.length ? hints.join(" ") : "Zerlege das Wort in sichtbare Teile und merke dir die Wortform als Bild.";
     }
 
     function renderPaperCheck(word) {
@@ -1480,7 +1533,6 @@
         </article>
         <div class="actions">
           <button class="accent" id="showAnswer">Antwort zeigen</button>
-          <button class="ghost" id="speakBtn">Anhören</button>
           <button class="ghost" id="wrongBtn" disabled>Noch unsicher</button>
           <button id="rightBtn" disabled>Sitzt</button>
           <button class="ghost" id="nextBtn">Weiter</button>
@@ -1491,7 +1543,6 @@
         document.querySelector("#wrongBtn").disabled = false;
         document.querySelector("#rightBtn").disabled = false;
       };
-      document.querySelector("#speakBtn").onclick = () => speak(word.en);
       document.querySelector("#wrongBtn").onclick = () => { record(word, false); renderPaperCheck(word); };
       document.querySelector("#rightBtn").onclick = () => { record(word, true); renderPaperCheck(word); };
       document.querySelector("#nextBtn").onclick = next;
@@ -1517,7 +1568,6 @@
           <div class="feedback" id="feedback"></div>
         </article>
         <div class="actions">
-          <button class="ghost" id="speakBtn">Anhören</button>
           <button id="nextBtn">Papier-Schritt</button>
         </div>
       `;
@@ -1532,7 +1582,6 @@
           document.querySelector("#feedback").textContent = ok ? "Richtig." : `Fast. Richtig ist: ${answerOf(word)}`;
         };
       });
-      document.querySelector("#speakBtn").onclick = () => speak(word.en);
       document.querySelector("#nextBtn").onclick = () => {
         if (state.answered) renderPaperCheck(word);
         else next();
@@ -1590,7 +1639,6 @@
         </article>
         <div class="actions">
           <button class="accent" id="checkBtn">Satz prüfen</button>
-          <button class="ghost" id="speakBtn">Wort anhören</button>
           <button id="nextBtn">Papier-Schritt</button>
         </div>
         <p class="mini">Erst auf Papier formulieren, dann eintippen. Da diese Offline-App keine KI-Korrektur nutzt, prüft sie Mindestlänge und ob das Zielwort vorkommt. Danach den Satz laut lesen: Das macht die Nutzung abrufbar.</p>
@@ -1604,7 +1652,6 @@
         document.querySelector("#feedback").className = `feedback ${ok ? "good" : "bad"}`;
         document.querySelector("#feedback").textContent = ok ? "Gut: jetzt laut lesen und weiter." : `Baue '${word.en}' in einen ganzen Satz ein.`;
       };
-      document.querySelector("#speakBtn").onclick = () => speak(word.en);
       document.querySelector("#nextBtn").onclick = () => {
         if (state.answered) renderPaperCheck(word);
         else next();
@@ -1620,6 +1667,7 @@
           ${metaLine(word)}
           <div class="spelling-word" id="spellingWord">${visualWord(word)}</div>
           <div class="letter-map">${letterMap(word)}</div>
+          ${trapList(word)}
           <p class="example">${spellingHint(word)}</p>
           <p class="mini">Look → Cover → Write → Check: Wortbild ansehen, dann abdecken, auf Papier schreiben und erst danach exakt eintippen.</p>
           <input id="spellingInput" placeholder="erst auf Papier, dann hier exakt eintippen" autocomplete="off">
@@ -1629,7 +1677,6 @@
         <div class="actions">
           <button class="ghost" id="coverBtn">Wort abdecken</button>
           <button class="accent" id="checkSpellingBtn">Spelling prüfen</button>
-          <button class="ghost" id="speakBtn">Anhören</button>
           <button id="nextBtn">Weiter</button>
         </div>
       `;
@@ -1658,7 +1705,6 @@
         document.querySelector("#spellingWord").innerHTML = visualWord(word);
         document.querySelector(".letter-map").hidden = false;
       };
-      document.querySelector("#speakBtn").onclick = () => speak(word.en);
       document.querySelector("#nextBtn").onclick = next;
       document.querySelector("#spellingInput").focus();
     }
