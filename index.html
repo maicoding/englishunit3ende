@@ -149,9 +149,10 @@
 
     .grid {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: minmax(0, 860px);
       gap: 18px;
       align-items: start;
+      justify-content: center;
     }
 
     .panel {
@@ -264,8 +265,21 @@
       font-size: clamp(36px, 7vw, 68px);
       line-height: 1.04;
       font-weight: 900;
-      color: var(--ink);
+      color: var(--good);
       overflow-wrap: anywhere;
+    }
+
+    .solution-display .chunk {
+      background: #ecfdf3;
+      color: var(--good);
+      border: 1px solid #bbf7d0;
+    }
+
+    .solution-display .chunk.tricky {
+      background: #dcfce7;
+      color: #166534;
+      border-color: #86efac;
+      box-shadow: inset 0 -4px 0 rgba(21, 128, 61, .25);
     }
 
     .example {
@@ -317,11 +331,6 @@
     .feedback.good { color: var(--good); }
     .feedback.bad { color: var(--bad); }
     .feedback.warn { color: var(--warn); }
-
-    .side {
-      display: grid;
-      gap: 18px;
-    }
 
     .box {
       padding: 18px;
@@ -692,10 +701,6 @@
         width: 100%;
       }
 
-      .side {
-        gap: 12px;
-      }
-
       .box {
         padding: 14px;
       }
@@ -796,46 +801,10 @@
         <div id="exercise"></div>
       </div>
 
-      <aside class="side">
-        <section class="panel box">
-          <h2>7-Tage-Sprint</h2>
-          <div class="plan">
-            <div class="day"><b>1</b><p>Alle Karten einmal ansehen. Nur 20 Minuten. Schwierige Wörter mit “falsch” markieren.</p></div>
-            <div class="day"><b>2</b><p>Englisch → Deutsch, danach 10 eigene Mini-Sätze sprechen.</p></div>
-            <div class="day"><b>3</b><p>Deutsch → Englisch. Alles, was stockt, laut buchstabieren und schreiben.</p></div>
-            <div class="day"><b>4</b><p>Lückensätze: Fokus auf typische Nutzung wie <i>to speak out about</i>, <i>forced relocation</i>, <i>to be at stake</i>.</p></div>
-            <div class="day"><b>5</b><p>Nur schwache Wörter. Je Wort einen persönlichen Satz bauen.</p></div>
-            <div class="day"><b>6</b><p>Testmodus: 20 Wörter schriftlich, ohne Lösungen anzusehen. Danach Fehler sofort wiederholen.</p></div>
-            <div class="day"><b>7</b><p>Generalprobe wie in der Schule: 30 Wörter, Deutsch → Englisch, danach nur die Testfehler.</p></div>
-          </div>
-        </section>
-
-        <section class="panel box">
-          <h2>Papier-Routine</h2>
-          <ol class="paper-steps">
-            <li>Im Spelling-Modus das Wortbild ansehen, abdecken, auf Papier schreiben und danach exakt eintippen.</li>
-            <li>Bei Karten, Quiz und Lücken folgt nach der App-Übung ein Papier-Check mit deutscher Bedeutung.</li>
-            <li>Danach erst in der App auswerten. Nicht währenddessen korrigieren.</li>
-            <li>Jedes falsche Wort dreimal schreiben: Englisch, Deutsch, ein eigener kurzer Satz.</li>
-            <li>Am Ende nur die Fehler noch einmal im Testmodus abfragen.</li>
-          </ol>
-        </section>
-
-        <section class="panel box">
-          <h2>Textanalyse-Kasten</h2>
-          <p class="mini"><b>Immer prüfen:</b> genre, setting, atmosphere, people, personal features, clothes, action, body language, suspense. Antwort nie nur als Meinung schreiben, sondern mit Belegwort.</p>
-        </section>
-
-        <section class="panel box">
-          <h2>App-Empfehlung</h2>
-          <p class="mini">Diese App nutzt selbst Spaced Repetition: richtige Wörter erscheinen morgen, dann nach 3, 7 und 14 Tagen wieder; falsche Wörter kommen sofort zurück. <b>Anki</b> ist als Zusatz stark, falls ihr geräteübergreifende Synchronisation wollt. Mit “Anki/Quizlet-Export” bekommst du eine TSV-Liste.</p>
-        </section>
-
-        <section class="panel box">
-          <h2>Wortliste</h2>
-          <div class="wordlist" id="wordlist"></div>
-        </section>
-      </aside>
+      <section class="panel box wordlist-panel">
+        <h2>Wortliste</h2>
+        <div class="wordlist" id="wordlist"></div>
+      </section>
     </section>
   </main>
 
