@@ -7,7 +7,7 @@ Die Kinder sollen den Trainer wie eine App vom Home-Bildschirm öffnen. Wichtig:
 ## Installation
 
 1. Den ganzen Ordner `vokabeltrainer-ipad-paket` bereithalten.
-2. Prüfen: Im Ordner muss die Datei `index.html` liegen.
+2. Prüfen: Im Ordner müssen `index.html` und `english-vocab-data.js` liegen.
 3. Am Computer `https://app.netlify.com/drop` öffnen.
 4. Den ganzen Ordner auf die Seite ziehen.
 5. Netlify erstellt einen Link.

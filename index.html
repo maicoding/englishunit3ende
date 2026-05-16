@@ -194,6 +194,24 @@
       font-weight: 700;
     }
 
+    .meta-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .meta-pill {
+      width: fit-content;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      color: var(--muted);
+      padding: 5px 9px;
+      font-size: 12px;
+      font-weight: 750;
+    }
+
     .word {
       font-size: clamp(34px, 7vw, 64px);
       line-height: 1;
@@ -616,8 +634,9 @@
     </section>
   </main>
 
+  <script src="english-vocab-data.js"></script>
   <script>
-    const words = [
+    const fallbackWords = [
       {en:"mile", de:"Meile", topic:"Story", ex:"A mile is 1,609 metres."},
       {en:"mysterious", de:"mysteriös; geheimnisvoll", topic:"Story", ex:"She answered mysteriously, 'Wait and see.'"},
       {en:"narrow", de:"eng; schmal", topic:"Story", ex:"We walked through a narrow street."},
@@ -800,6 +819,28 @@
       {en:"diet", de:"Ernährung; Diät", topic:"Culture box", ex:"Corn was part of their diet."},
       {en:"monument", de:"Monument; Denkmal", topic:"Culture box", ex:"The monument honors the past."}
     ];
+
+    function toTrainerWord(entry) {
+      if (entry.en) return entry;
+      return {
+        id: entry.id,
+        en: entry.english,
+        de: Array.isArray(entry.german) ? entry.german.join("; ") : entry.german,
+        topic: entry.topic || entry.courseArea || "Vokabeln",
+        ex: entry.example || "",
+        cloze: entry.cloze || "",
+        clozeAnswer: entry.clozeAnswer || entry.english,
+        wordType: entry.wordType || "word",
+        difficulty: entry.difficulty || 2,
+        spelling: entry.spelling || {chunks: [], traps: []},
+        tags: entry.tags || [],
+        trainerModes: entry.trainerModes || [],
+        paperPrompt: entry.paperPrompt || "Englische Vokabel und einen kurzen Beispielsatz auf Papier schreiben.",
+        errorTypes: entry.errorTypes || ["meaning", "spelling"]
+      };
+    }
+
+    const words = (window.ENGLISH_VOCAB_DATA || fallbackWords).map(toTrainerWord);
 
     const state = {
       mode: "flash",
@@ -1056,7 +1097,36 @@
       return indexes;
     }
 
-    function visualWord(text) {
+    function spellingTraps(word) {
+      if (word && word.spelling && Array.isArray(word.spelling.traps)) return word.spelling.traps.filter(Boolean);
+      return [];
+    }
+
+    function trickyIndexesForWord(word) {
+      const text = typeof word === "string" ? word : word.en;
+      const indexes = trickyIndexesForWord(value);
+      spellingTraps(word).forEach(trap => {
+        const lower = text.toLowerCase();
+        const target = String(trap).toLowerCase();
+        let start = lower.indexOf(target);
+        while (start !== -1) {
+          for (let i = start; i < start + target.length; i += 1) indexes.add(i);
+          start = lower.indexOf(target, start + 1);
+        }
+      });
+      return indexes;
+    }
+
+    function visualWord(value) {
+      const text = typeof value === "string" ? value : value.en;
+      const chunks = typeof value === "object" && value.spelling && Array.isArray(value.spelling.chunks) ? value.spelling.chunks : [];
+      if (chunks.length > 1) {
+        return chunks.map(chunk => {
+          const indexes = trickyIndexesForWord({en: chunk, spelling: {traps: spellingTraps(value)}});
+          const isTricky = [...chunk].some((_, index) => indexes.has(index));
+          return `<span class="chunk ${isTricky ? "tricky" : ""}">${escapeHtml(chunk)}</span>`;
+        }).join("");
+      }
       const indexes = trickyIndexes(text);
       let html = "";
       let buffer = "";
@@ -1074,9 +1144,37 @@
       return html;
     }
 
-    function letterMap(text) {
-      const indexes = trickyIndexes(text);
+    function letterMap(value) {
+      const text = typeof value === "string" ? value : value.en;
+      const indexes = trickyIndexesForWord(value);
       return [...text].map((char, index) => `<span class="${indexes.has(index) ? "tricky" : ""}">${escapeHtml(char)}</span>`).join("");
+    }
+
+    function metaLine(word) {
+      const level = Number(word.difficulty || 2);
+      const labels = {
+        phrase: "Mehrwortausdruck",
+        phrasal_verb: "Phrasal verb",
+        verb: "Verb",
+        noun: "Nomen",
+        adjective: "Adjektiv",
+        adverb: "Adverb"
+      };
+      const difficulty = level >= 3 ? "schwer" : level === 2 ? "mittel" : "leicht";
+      return `
+        <div class="meta-line">
+          <span class="meta-pill">${labels[word.wordType] || "Vokabel"}</span>
+          <span class="meta-pill">Schreibung: ${difficulty}</span>
+        </div>
+      `;
+    }
+
+    function clozeText(word) {
+      if (word.cloze && word.cloze.includes("[...]")) return word.cloze.replace("[...]", "_____");
+      const source = word.ex || "";
+      const answer = word.clozeAnswer || word.en;
+      const blanked = source.replace(new RegExp(answer.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"), "_____");
+      return blanked.includes("_____") ? blanked : `${source} → _____`;
     }
 
     function exactSpelling(input, expected) {
@@ -1099,6 +1197,10 @@
     }
 
     function spellingHint(word) {
+      const traps = spellingTraps(word);
+      if (traps.length) {
+        return `Merke dir besonders: ${traps.join(" · ")}. Sieh das Wort als Blöcke, decke es ab und schreibe es danach ohne Vorlage.`;
+      }
       const lower = word.en.toLowerCase();
       const hints = [];
       if (/(.)\1/.test(lower)) hints.push("Achte auf Doppelbuchstaben.");
@@ -1116,7 +1218,8 @@
         <article class="card">
           <span class="tag">Papier-Check</span>
           <div class="translation">${word.de}</div>
-          <p class="example">Schreibe die englische Vokabel jetzt noch einmal auf ein leeres Blatt. Nicht tippen. Erst danach die Lösung einblenden.</p>
+          ${metaLine(word)}
+          <p class="example">${word.paperPrompt || "Schreibe die englische Vokabel jetzt noch einmal auf ein leeres Blatt. Nicht tippen. Erst danach die Lösung einblenden."}</p>
           <div class="word" hidden>${word.en}</div>
           <p class="mini" hidden>Vergleiche streng: Ist das Wort ganz falsch, oder stimmt die Bedeutung und nur die Schreibweise ist falsch?</p>
         </article>
@@ -1144,6 +1247,7 @@
         <article class="card">
           <span class="tag">${word.topic}</span>
           <div class="word">${promptOf(word)}</div>
+          ${metaLine(word)}
           <div class="translation" hidden>${answerOf(word)}</div>
           <p class="example">${word.ex}</p>
           <p class="mini">Leeres Blatt: Schreibe erst deine Antwort auf. Danach wähle hier aus.</p>
@@ -1211,11 +1315,12 @@
     }
 
     function renderCloze(word) {
-      const blanked = word.ex.replace(new RegExp(word.en.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"), "_____");
+      const blanked = clozeText(word);
       exercise.innerHTML = `
         <article class="card">
           <span class="tag">${word.topic}</span>
-          <p class="example">${blanked.includes("_____") ? blanked : word.ex + " → _____"}</p>
+          ${metaLine(word)}
+          <p class="example">${blanked}</p>
           <div class="translation">${word.de}</div>
           <p class="mini">Erst handschriftlich ergänzen, dann eintippen. Das trainiert Abruf und Rechtschreibung.</p>
           <input id="clozeInput" placeholder="englisches Wort einsetzen">
@@ -1252,6 +1357,7 @@
         <article class="card sentence">
           <span class="tag">${word.topic}</span>
           <div class="word">${word.en}</div>
+          ${metaLine(word)}
           <div class="translation">${word.de}</div>
           <p class="example">Modellsatz: ${word.ex}</p>
           <textarea id="sentenceInput" placeholder="Schreibe einen eigenen englischen Satz mit '${word.en}'."></textarea>
@@ -1286,8 +1392,9 @@
         <article class="card">
           <span class="tag">${word.topic} · Spelling</span>
           <div class="translation">${word.de}</div>
-          <div class="spelling-word" id="spellingWord">${visualWord(word.en)}</div>
-          <div class="letter-map">${letterMap(word.en)}</div>
+          ${metaLine(word)}
+          <div class="spelling-word" id="spellingWord">${visualWord(word)}</div>
+          <div class="letter-map">${letterMap(word)}</div>
           <p class="example">${spellingHint(word)}</p>
           <p class="mini">Look → Cover → Write → Check: Wortbild ansehen, dann abdecken, auf Papier schreiben und erst danach exakt eintippen.</p>
           <input id="spellingInput" placeholder="erst auf Papier, dann hier exakt eintippen" autocomplete="off">
@@ -1323,7 +1430,7 @@
             <div class="diff-box"><b>richtig</b><div class="diff-text">${diff.expectedHtml}</div></div>
           </div>
         `;
-        document.querySelector("#spellingWord").innerHTML = visualWord(word.en);
+        document.querySelector("#spellingWord").innerHTML = visualWord(word);
         document.querySelector(".letter-map").hidden = false;
       };
       document.querySelector("#speakBtn").onclick = () => speak(word.en);
