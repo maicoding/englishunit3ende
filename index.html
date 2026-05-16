@@ -76,16 +76,17 @@
     header {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      gap: 20px;
-      align-items: end;
-      padding: 28px 0 22px;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 0 12px;
     }
 
     h1 {
       margin: 0;
-      font-size: 58px;
-      line-height: .96;
+      font-size: clamp(22px, 3.4vw, 34px);
+      line-height: 1.05;
       letter-spacing: 0;
+      font-weight: 800;
     }
 
     .sub {
@@ -187,6 +188,32 @@
       background: var(--accent);
       color: white;
       border-color: var(--accent);
+    }
+
+    .work-extra {
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,.68);
+      padding: 10px 12px;
+    }
+
+    .work-extra summary {
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .work-extra p {
+      margin: 8px 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .work-extra .mode-tabs {
+      margin-top: 8px;
+      grid-template-columns: minmax(120px, 220px);
     }
 
     .card {
@@ -635,12 +662,12 @@
 
       header {
         gap: 12px;
-        padding: 16px 0 12px;
+        padding: 10px 0 8px;
       }
 
       h1 {
-        font-size: 32px;
-        line-height: 1;
+        font-size: 21px;
+        line-height: 1.05;
       }
 
       .stats {
@@ -811,9 +838,15 @@
           <button data-mode="choice">Quiz</button>
           <button data-mode="cloze">Lücke</button>
           <button data-mode="spelling">Spelling</button>
-          <button data-mode="analysis">Analyse</button>
           <button data-mode="test">Test</button>
         </nav>
+        <details class="work-extra">
+          <summary>Zusatz: Textanalyse für die Arbeit</summary>
+          <p>Hauptziel bleibt der Vokabeltest. Hier werden zusätzlich Analysebegriffe, Satzbausteine und Belege trainiert.</p>
+          <div class="mode-tabs">
+            <button data-mode="analysis">Textanalyse</button>
+          </div>
+        </details>
         <div id="exercise"></div>
       </div>
 
@@ -1097,6 +1130,17 @@
       save();
     }
 
+    function needsPaperStep(word) {
+      const p = state.progress[key(word)] || {right:0, wrong:0, box:0, paperOk:0, paperSpelling:0, paperWrong:0};
+      const paperErrors = (p.paperSpelling || 0) + (p.paperWrong || 0);
+      return !(p.box >= 5 && (p.paperOk || 0) >= 3 && paperErrors === 0);
+    }
+
+    function continueAfterDigital(word) {
+      if (needsPaperStep(word)) renderPaperCheck(word);
+      else next();
+    }
+
     function score(word) {
       const p = state.progress[key(word)] || {right:0, wrong:0, box:0, paperSpelling:0, paperWrong:0};
       return p.right - p.wrong * 1.5 - (p.paperSpelling || 0) * .7 - (p.paperWrong || 0) * 1.2;
@@ -1189,6 +1233,27 @@
         model: "This is a crime story because there is a detective, clues and a disappearance."
       },
       {
+        title: "Genre begründen",
+        prompt: "The story takes place in the future. People live under strict rules and cannot choose their jobs.",
+        question: "Name the genre and give one reason.",
+        answer: "dystopia / strict rules / future",
+        model: "This is a dystopia because it is set in the future and people live under strict rules."
+      },
+      {
+        title: "Setting",
+        prompt: "When I arrived in Midtown Manhattan, I left the subway station and walked down 51st Street.",
+        question: "What is the setting?",
+        answer: "Midtown Manhattan / subway station / 51st Street",
+        model: "The setting is Midtown Manhattan, near a subway station."
+      },
+      {
+        title: "Setting genau nennen",
+        prompt: "The character is walking through an empty street at 6 p.m. Dark clouds cover the sky.",
+        question: "Name place, time and weather.",
+        answer: "empty street / 6 p.m. / dark clouds",
+        model: "The scene is set in an empty street at 6 p.m. The weather is dark and cloudy."
+      },
+      {
         title: "Atmosphäre belegen",
         prompt: "Dark clouds covered the sky. The street was empty and I heard footsteps behind me.",
         question: "Which words create suspense?",
@@ -1196,11 +1261,18 @@
         model: "The words 'dark', 'empty' and 'footsteps behind me' create suspense."
       },
       {
-        title: "Setting bestimmen",
-        prompt: "When I arrived in Midtown Manhattan, I left the subway station and walked down 51st Street.",
-        question: "What is the setting?",
-        answer: "Midtown Manhattan / subway station / 51st Street",
-        model: "The setting is Midtown Manhattan, near a subway station."
+        title: "Atmosphäre benennen",
+        prompt: "It was a beautiful April day. White clouds looked as soft as whipped cream.",
+        question: "Which atmosphere is created?",
+        answer: "peaceful / romantic / positive",
+        model: "The atmosphere is peaceful and positive because the day is beautiful and the clouds look soft."
+      },
+      {
+        title: "Suspense",
+        prompt: "He put his hoodie over his head and stared at me again. I started to walk faster.",
+        question: "How does the text create suspense?",
+        answer: "hoodie / stared / walk faster",
+        model: "The text creates suspense because the man hides his face, stares at the narrator and makes her walk faster."
       },
       {
         title: "Figurenbeschreibung",
@@ -1210,6 +1282,34 @@
         model: "A personal feature is that he is tall and strong. His body language is threatening because he stares."
       },
       {
+        title: "Clothes",
+        prompt: "He wore a clean white shirt and light blue jeans.",
+        question: "Which category do these details belong to?",
+        answer: "clothes",
+        model: "These details describe the character's clothes: a white shirt and light blue jeans."
+      },
+      {
+        title: "Body language",
+        prompt: "She looked back nervously and held her bag tightly.",
+        question: "Which body-language details show fear?",
+        answer: "looked back nervously / held her bag tightly",
+        model: "Her body language shows fear because she looks back nervously and holds her bag tightly."
+      },
+      {
+        title: "Evidence",
+        prompt: "The street was empty at 6:00 p.m. and the narrator says, 'Now I was really scared.'",
+        question: "Give evidence for fear.",
+        answer: "empty street / Now I was really scared",
+        model: "There is evidence for fear in the phrase 'Now I was really scared' and in the empty street."
+      },
+      {
+        title: "Quote einbauen",
+        prompt: "The narrator says: Now I was really scared.",
+        question: "Write a sentence with a quote.",
+        answer: "This is shown by the sentence ...",
+        model: "This is shown by the sentence 'Now I was really scared.'"
+      },
+      {
         title: "Vergleich",
         prompt: "Text A is dark and frightening. Text B is sunny and romantic.",
         question: "Which text is more suspenseful? Give a reason.",
@@ -1217,11 +1317,46 @@
         model: "Text A is more suspenseful because the atmosphere is dark and frightening."
       },
       {
+        title: "Compare and contrast",
+        prompt: "Text A: dark clouds, empty street. Text B: beautiful day, soft clouds.",
+        question: "Compare the atmosphere.",
+        answer: "Text A suspenseful / Text B positive",
+        model: "In contrast to Text B, Text A creates a suspenseful atmosphere because the street is empty and the clouds are dark."
+      },
+      {
         title: "Passendes Foto begründen",
         prompt: "A photo shows a woman looking back nervously in a crowded city street.",
         question: "Which detail would you use as evidence?",
         answer: "looking back nervously / city street",
         model: "The photo matches a suspenseful city scene because the woman looks back nervously."
+      },
+      {
+        title: "Opinion begründen",
+        prompt: "Text A has danger and suspense. Text B has romance and a happy accident.",
+        question: "Which text is more interesting? Why?",
+        answer: "own opinion with because",
+        model: "In my opinion, Text A is more interesting because the suspense makes the reader want to know what happens next."
+      },
+      {
+        title: "Wirkung auf Leser",
+        prompt: "The narrator walks faster because the man follows her.",
+        question: "What effect does this have on the reader?",
+        answer: "reader feels nervous / wants to know what happens next",
+        model: "This makes the reader feel nervous and curious about what will happen next."
+      },
+      {
+        title: "Useful phrase",
+        prompt: "Deutsch: Das wird durch die Wörter ... gezeigt.",
+        question: "Write this in English.",
+        answer: "This is shown by the words ...",
+        model: "This is shown by the words 'dark clouds' and 'empty street'."
+      },
+      {
+        title: "Useful phrase",
+        prompt: "Deutsch: Das Foto passt besser zu Text A, weil ...",
+        question: "Write this in English.",
+        answer: "The photo matches Text A better because ...",
+        model: "The photo matches Text A better because it shows a nervous person in a city street."
       }
     ];
 
@@ -1237,8 +1372,10 @@
           <p class="example">${task.prompt}</p>
           <div class="word" style="font-size: clamp(24px, 4vw, 38px);">${task.question}</div>
           <div class="analysis-grid">
-            <div class="analysis-item"><b>Raster</b><span>genre · setting · atmosphere · people · personal features · clothes · action · body language · suspense</span></div>
-            <div class="analysis-item"><b>Pflicht</b><span>Schreibe erst Stichworte auf Papier. Danach erst Musterlösung zeigen.</span></div>
+            <div class="analysis-item"><b>Analyse-Wortschatz</b><span>genre · setting · atmosphere · suspense · evidence · quote · compare · contrast · effect on the reader</span></div>
+            <div class="analysis-item"><b>Ablauf</b><span>1. Stichworte auf Papier. 2. Englischen Satz schreiben. 3. Musterlösung vergleichen.</span></div>
+            <div class="analysis-item"><b>Pflichtformel</b><span>claim → evidence → effect</span></div>
+            <div class="analysis-item"><b>Satzstarter</b><span>This is shown by... · This creates... · In contrast to... · The photo matches...</span></div>
           </div>
           <div class="feedback" id="analysisSolution" hidden>
             <b>Beleg:</b> ${task.answer}<br>
@@ -1540,7 +1677,6 @@
           <button class="accent" id="showAnswer">Antwort zeigen</button>
           <button class="ghost" id="wrongBtn" disabled>Noch unsicher</button>
           <button id="rightBtn" disabled>Sitzt</button>
-          <button class="ghost" id="nextBtn">Weiter</button>
         </div>
       `;
       document.querySelector("#showAnswer").onclick = () => {
@@ -1548,9 +1684,8 @@
         document.querySelector("#wrongBtn").disabled = false;
         document.querySelector("#rightBtn").disabled = false;
       };
-      document.querySelector("#wrongBtn").onclick = () => { record(word, false); renderPaperCheck(word); };
-      document.querySelector("#rightBtn").onclick = () => { record(word, true); renderPaperCheck(word); };
-      document.querySelector("#nextBtn").onclick = next;
+      document.querySelector("#wrongBtn").onclick = () => { record(word, false); continueAfterDigital(word); };
+      document.querySelector("#rightBtn").onclick = () => { record(word, true); continueAfterDigital(word); };
     }
 
     function renderChoice(word) {
@@ -1573,7 +1708,7 @@
           <div class="feedback" id="feedback"></div>
         </article>
         <div class="actions">
-          <button id="nextBtn">Papier-Schritt</button>
+          <button id="nextBtn" disabled>Nach dem Prüfen: Papier-Schritt</button>
         </div>
       `;
       document.querySelectorAll("[data-option]").forEach(button => {
@@ -1585,11 +1720,11 @@
           button.classList.add(ok ? "correct" : "wrong");
           document.querySelector("#feedback").className = `feedback ${ok ? "good" : "bad"}`;
           document.querySelector("#feedback").innerHTML = ok ? "Richtig." : `Fast. Richtig ist:${solutionHtml(word)}`;
+          document.querySelector("#nextBtn").disabled = false;
         };
       });
       document.querySelector("#nextBtn").onclick = () => {
-        if (state.answered) renderPaperCheck(word);
-        else next();
+        if (state.answered) continueAfterDigital(word);
       };
     }
 
@@ -1608,7 +1743,7 @@
         <div class="actions">
           <button class="accent" id="checkBtn">Prüfen</button>
           <button class="ghost" id="solutionBtn">Lösung</button>
-          <button id="nextBtn">Papier-Schritt</button>
+          <button id="nextBtn" disabled>Nach dem Prüfen: Papier-Schritt</button>
         </div>
       `;
       document.querySelector("#checkBtn").onclick = () => {
@@ -1619,14 +1754,14 @@
         state.answered = true;
         document.querySelector("#feedback").className = `feedback ${ok ? "good" : "bad"}`;
         document.querySelector("#feedback").innerHTML = ok ? "Richtig benutzt." : `Lösung:<div class="solution-display">${escapeHtml(clozeAnswerForDisplay(word))}</div>`;
+        document.querySelector("#nextBtn").disabled = false;
       };
       document.querySelector("#solutionBtn").onclick = () => {
         document.querySelector("#feedback").className = "feedback";
         document.querySelector("#feedback").innerHTML = `<div class="solution-display">${escapeHtml(clozeAnswerForDisplay(word))}</div><div>${escapeHtml(word.de)}</div>`;
       };
       document.querySelector("#nextBtn").onclick = () => {
-        if (state.answered) renderPaperCheck(word);
-        else next();
+        if (state.answered) continueAfterDigital(word);
       };
       document.querySelector("#clozeInput").focus();
     }
@@ -1644,7 +1779,7 @@
         </article>
         <div class="actions">
           <button class="accent" id="checkBtn">Satz prüfen</button>
-          <button id="nextBtn">Papier-Schritt</button>
+          <button id="nextBtn" disabled>Nach dem Prüfen: Papier-Schritt</button>
         </div>
         <p class="mini">Erst auf Papier formulieren, dann eintippen. Da diese Offline-App keine KI-Korrektur nutzt, prüft sie Mindestlänge und ob das Zielwort vorkommt. Danach den Satz laut lesen: Das macht die Nutzung abrufbar.</p>
       `;
@@ -1656,10 +1791,10 @@
         state.answered = true;
         document.querySelector("#feedback").className = `feedback ${ok ? "good" : "bad"}`;
         document.querySelector("#feedback").textContent = ok ? "Gut: jetzt laut lesen und weiter." : `Baue '${word.en}' in einen ganzen Satz ein.`;
+        document.querySelector("#nextBtn").disabled = false;
       };
       document.querySelector("#nextBtn").onclick = () => {
-        if (state.answered) renderPaperCheck(word);
-        else next();
+        if (state.answered) continueAfterDigital(word);
       };
       document.querySelector("#sentenceInput").focus();
     }
@@ -1681,13 +1816,14 @@
         </article>
         <div class="actions">
           <button class="ghost" id="coverBtn">Wort abdecken</button>
-          <button class="accent" id="checkSpellingBtn">Spelling prüfen</button>
-          <button id="nextBtn">Weiter</button>
+          <button class="accent" id="checkSpellingBtn" disabled>Spelling prüfen</button>
+          <button id="nextBtn" disabled>Weiter</button>
         </div>
       `;
       document.querySelector("#coverBtn").onclick = () => {
         document.querySelector("#spellingWord").textContent = "••••••••";
         document.querySelector(".letter-map").hidden = true;
+        document.querySelector("#checkSpellingBtn").disabled = false;
         document.querySelector("#spellingInput").focus();
       };
       document.querySelector("#checkSpellingBtn").onclick = () => {
@@ -1709,6 +1845,7 @@
         `;
         document.querySelector("#spellingWord").innerHTML = visualWord(word);
         document.querySelector(".letter-map").hidden = false;
+        document.querySelector("#nextBtn").disabled = false;
       };
       document.querySelector("#nextBtn").onclick = next;
       document.querySelector("#spellingInput").focus();
