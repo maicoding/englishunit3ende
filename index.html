@@ -556,7 +556,6 @@
     <header>
       <div>
         <h1>Vokabeltraining<br>Across cultures 3</h1>
-        <p class="sub">Schnell lernen, aber nicht flach: erst auf einem leeren Blatt abrufen, dann in der App prüfen, dann mit Abstand wiederholen. Die App merkt sich Treffer und zeigt gezielt die schwachen Wörter.</p>
       </div>
       <section class="stats" aria-label="Lernstand">
         <div class="stat"><b id="knownCount">0</b><span>sicher</span></div>
@@ -1219,19 +1218,26 @@
           <span class="tag">Papier-Check</span>
           <div class="translation">${word.de}</div>
           ${metaLine(word)}
-          <p class="example">${word.paperPrompt || "Schreibe die englische Vokabel jetzt noch einmal auf ein leeres Blatt. Nicht tippen. Erst danach die Lösung einblenden."}</p>
-          <div class="word" hidden>${word.en}</div>
+          <div class="word" id="paperWord">${word.en}</div>
+          <p class="example" id="paperPrompt">Präge dir das Wort ein. Drücke dann auf „Auf Papier schreiben“.</p>
           <p class="mini" hidden>Vergleiche streng: Ist das Wort ganz falsch, oder stimmt die Bedeutung und nur die Schreibweise ist falsch?</p>
         </article>
         <div class="actions">
-          <button class="accent" id="showPaperAnswer">Lösung zeigen</button>
+          <button class="accent" id="startPaper">Auf Papier schreiben</button>
+          <button class="accent" id="showPaperAnswer" hidden>Lösung wieder zeigen</button>
           <button class="ghost" id="paperOk" disabled>richtig geschrieben</button>
           <button class="ghost" id="paperSpelling" disabled>nur Schreibfehler</button>
           <button class="ghost" id="paperWrong" disabled>Wort komplett falsch</button>
         </div>
       `;
+      document.querySelector("#startPaper").onclick = () => {
+        document.querySelector("#paperWord").hidden = true;
+        document.querySelector("#paperPrompt").textContent = word.paperPrompt || "Schreibe die englische Vokabel jetzt auf ein leeres Blatt.";
+        document.querySelector("#startPaper").hidden = true;
+        document.querySelector("#showPaperAnswer").hidden = false;
+      };
       document.querySelector("#showPaperAnswer").onclick = () => {
-        document.querySelector(".word").hidden = false;
+        document.querySelector("#paperWord").hidden = false;
         document.querySelector(".card .mini").hidden = false;
         document.querySelector("#paperOk").disabled = false;
         document.querySelector("#paperSpelling").disabled = false;
