@@ -1,0 +1,1539 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Across cultures 3 - Vokabeltrainer</title>
+  <style>
+    :root {
+      --bg: #f6f3ec;
+      --ink: #17201f;
+      --muted: #63706d;
+      --line: #d7d1c4;
+      --panel: #ffffff;
+      --accent: #0f766e;
+      --accent-2: #b45309;
+      --good: #15803d;
+      --bad: #b91c1c;
+      --warn: #ca8a04;
+      --soft: #e8f3f1;
+      --shadow: 0 18px 50px rgba(24, 31, 29, .10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(135deg, rgba(15, 118, 110, .10), transparent 35%),
+        linear-gradient(315deg, rgba(180, 83, 9, .10), transparent 38%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    button {
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 10px 14px;
+      background: var(--ink);
+      color: white;
+      cursor: pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+
+    button:hover { transform: translateY(-1px); }
+    button:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+
+    .ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .accent { background: var(--accent); }
+
+    .app {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: end;
+      padding: 28px 0 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 66px);
+      line-height: .96;
+      letter-spacing: 0;
+    }
+
+    .sub {
+      max-width: 740px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      min-width: 330px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,.72);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .stat b {
+      display: block;
+      font-size: 24px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      background: rgba(255,255,255,.72);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 18px;
+    }
+
+    select, input, textarea {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      color: var(--ink);
+      padding: 10px 12px;
+      min-height: 42px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(255,255,255,.86);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .trainer {
+      min-height: 520px;
+      padding: 22px;
+      display: grid;
+      align-content: start;
+      gap: 16px;
+    }
+
+    .mode-tabs {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+    }
+
+    .mode-tabs button {
+      background: white;
+      color: var(--ink);
+      border-color: var(--line);
+      padding: 10px 8px;
+    }
+
+    .mode-tabs button.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 8px;
+      padding: clamp(18px, 4vw, 34px);
+      min-height: 300px;
+      display: grid;
+      align-content: center;
+      gap: 14px;
+    }
+
+    .tag {
+      width: fit-content;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      padding: 6px 10px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .word {
+      font-size: clamp(34px, 7vw, 64px);
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .translation {
+      font-size: 24px;
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    .example {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 17px;
+    }
+
+    .choices {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .choices button {
+      text-align: left;
+      background: white;
+      color: var(--ink);
+      border-color: var(--line);
+      min-height: 58px;
+    }
+
+    .choices button.correct {
+      border-color: var(--good);
+      background: #ecfdf3;
+    }
+
+    .choices button.wrong {
+      border-color: var(--bad);
+      background: #fef2f2;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .feedback {
+      min-height: 28px;
+      font-weight: 700;
+    }
+
+    .feedback.good { color: var(--good); }
+    .feedback.bad { color: var(--bad); }
+    .feedback.warn { color: var(--warn); }
+
+    .side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .box {
+      padding: 18px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .plan {
+      display: grid;
+      gap: 8px;
+    }
+
+    .day {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .day:first-child { border-top: 0; }
+
+    .day b {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--soft);
+      color: var(--accent);
+    }
+
+    .day p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .paper-steps {
+      display: grid;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      counter-reset: paper;
+    }
+
+    .paper-steps li {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .paper-steps li::before {
+      counter-increment: paper;
+      content: counter(paper);
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #fff7ed;
+      color: var(--accent-2);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .wordlist {
+      max-height: 390px;
+      overflow: auto;
+      border-top: 1px solid var(--line);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .row span:last-child { color: var(--muted); }
+
+    .sentence textarea {
+      width: 100%;
+      min-height: 118px;
+      resize: vertical;
+    }
+
+    .mini {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .test-setup {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .test-row {
+      display: grid;
+      grid-template-columns: minmax(140px, .8fr) minmax(180px, 1fr);
+      gap: 10px;
+      align-items: center;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .test-row:first-child { border-top: 0; }
+
+    .test-row input { width: 100%; }
+
+    .result-table {
+      max-height: 320px;
+      overflow: auto;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .result-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    .result-row:first-child { border-top: 0; }
+
+    .result-row small {
+      color: var(--muted);
+      display: block;
+      margin-top: 3px;
+    }
+
+    .spelling-word {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      align-items: center;
+      font-size: clamp(32px, 7vw, 62px);
+      line-height: 1;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    .chunk {
+      display: inline-flex;
+      align-items: center;
+      min-height: 1.1em;
+      border-radius: 8px;
+      padding: 3px 6px;
+      background: #f3f4f6;
+    }
+
+    .chunk.tricky {
+      background: #fff7ed;
+      color: var(--accent-2);
+      box-shadow: inset 0 -3px 0 rgba(180, 83, 9, .25);
+    }
+
+    .letter-map {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 4px;
+    }
+
+    .letter-map span {
+      display: grid;
+      place-items: center;
+      min-width: 28px;
+      height: 32px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: white;
+      font-weight: 800;
+    }
+
+    .letter-map .tricky {
+      border-color: #fed7aa;
+      background: #fff7ed;
+      color: var(--accent-2);
+    }
+
+    .diff {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .diff-box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: white;
+      min-height: 70px;
+    }
+
+    .diff-box b {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .diff-text {
+      font-size: 22px;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    .diff-text mark {
+      background: #fee2e2;
+      color: var(--bad);
+      border-radius: 4px;
+      padding: 0 2px;
+    }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .analysis-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: white;
+    }
+
+    .analysis-item b {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 900px) {
+      header, .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        min-width: 0;
+      }
+
+      .mode-tabs, .choices {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .test-setup, .test-row, .result-row, .diff, .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .app { padding: 18px; }
+      .stats { grid-template-columns: 1fr; }
+      .mode-tabs, .choices { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <h1>Vokabeltraining<br>Across cultures 3</h1>
+        <p class="sub">Schnell lernen, aber nicht flach: erst auf einem leeren Blatt abrufen, dann in der App prüfen, dann mit Abstand wiederholen. Die App merkt sich Treffer und zeigt gezielt die schwachen Wörter.</p>
+      </div>
+      <section class="stats" aria-label="Lernstand">
+        <div class="stat"><b id="knownCount">0</b><span>sicher</span></div>
+        <div class="stat"><b id="practiceCount">0/0</b><span>fällig/geübt</span></div>
+        <div class="stat"><b id="accuracy">0%</b><span>Trefferquote</span></div>
+      </section>
+    </header>
+
+    <section class="toolbar" aria-label="Filter">
+      <select id="topicFilter"></select>
+      <select id="direction">
+        <option value="en-de">Englisch → Deutsch</option>
+        <option value="de-en">Deutsch → Englisch</option>
+      </select>
+      <button class="ghost" id="dueOnly">Heute fällig</button>
+      <button class="ghost" id="weakOnly">Nur schwache Wörter</button>
+      <button class="ghost" id="exportBtn">Anki/Quizlet-Export</button>
+      <button class="ghost" id="resetBtn">Fortschritt löschen</button>
+    </section>
+
+    <section class="grid">
+      <div class="panel trainer">
+        <nav class="mode-tabs" aria-label="Trainingsmodus">
+          <button class="active" data-mode="flash">Karte</button>
+          <button data-mode="choice">Quiz</button>
+          <button data-mode="cloze">Lücke</button>
+          <button data-mode="sentence">Satz</button>
+          <button data-mode="spelling">Spelling</button>
+          <button data-mode="analysis">Analyse</button>
+          <button data-mode="test">Test</button>
+        </nav>
+        <div id="exercise"></div>
+      </div>
+
+      <aside class="side">
+        <section class="panel box">
+          <h2>7-Tage-Sprint</h2>
+          <div class="plan">
+            <div class="day"><b>1</b><p>Alle Karten einmal ansehen. Nur 20 Minuten. Schwierige Wörter mit “falsch” markieren.</p></div>
+            <div class="day"><b>2</b><p>Englisch → Deutsch, danach 10 eigene Mini-Sätze sprechen.</p></div>
+            <div class="day"><b>3</b><p>Deutsch → Englisch. Alles, was stockt, laut buchstabieren und schreiben.</p></div>
+            <div class="day"><b>4</b><p>Lückensätze: Fokus auf typische Nutzung wie <i>to speak out about</i>, <i>forced relocation</i>, <i>to be at stake</i>.</p></div>
+            <div class="day"><b>5</b><p>Nur schwache Wörter. Je Wort einen persönlichen Satz bauen.</p></div>
+            <div class="day"><b>6</b><p>Testmodus: 20 Wörter schriftlich, ohne Lösungen anzusehen. Danach Fehler sofort wiederholen.</p></div>
+            <div class="day"><b>7</b><p>Generalprobe wie in der Schule: 30 Wörter, Deutsch → Englisch, danach nur die Testfehler.</p></div>
+          </div>
+        </section>
+
+        <section class="panel box">
+          <h2>Papier-Routine</h2>
+          <ol class="paper-steps">
+            <li>Im Spelling-Modus das Wortbild ansehen, abdecken, auf Papier schreiben und danach exakt eintippen.</li>
+            <li>Bei Karten, Quiz und Lücken folgt nach der App-Übung ein Papier-Check mit deutscher Bedeutung.</li>
+            <li>Danach erst in der App auswerten. Nicht währenddessen korrigieren.</li>
+            <li>Jedes falsche Wort dreimal schreiben: Englisch, Deutsch, ein eigener kurzer Satz.</li>
+            <li>Am Ende nur die Fehler noch einmal im Testmodus abfragen.</li>
+          </ol>
+        </section>
+
+        <section class="panel box">
+          <h2>Textanalyse-Kasten</h2>
+          <p class="mini"><b>Immer prüfen:</b> genre, setting, atmosphere, people, personal features, clothes, action, body language, suspense. Antwort nie nur als Meinung schreiben, sondern mit Belegwort.</p>
+        </section>
+
+        <section class="panel box">
+          <h2>App-Empfehlung</h2>
+          <p class="mini">Diese App nutzt selbst Spaced Repetition: richtige Wörter erscheinen morgen, dann nach 3, 7 und 14 Tagen wieder; falsche Wörter kommen sofort zurück. <b>Anki</b> ist als Zusatz stark, falls ihr geräteübergreifende Synchronisation wollt. Mit “Anki/Quizlet-Export” bekommst du eine TSV-Liste.</p>
+        </section>
+
+        <section class="panel box">
+          <h2>Wortliste</h2>
+          <div class="wordlist" id="wordlist"></div>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const words = [
+      {en:"mile", de:"Meile", topic:"Story", ex:"A mile is 1,609 metres."},
+      {en:"mysterious", de:"mysteriös; geheimnisvoll", topic:"Story", ex:"She answered mysteriously, 'Wait and see.'"},
+      {en:"narrow", de:"eng; schmal", topic:"Story", ex:"We walked through a narrow street."},
+      {en:"opening", de:"Öffnung; Beginn", topic:"Story", ex:"The cat came through a narrow opening."},
+      {en:"all right", de:"in Ordnung; alles klar", topic:"Story", ex:"All right, let's start."},
+      {en:"off they went", de:"sie gingen los", topic:"Story", ex:"They packed their bags and off they went."},
+      {en:"drive", de:"Fahrt; Anfahrt; Autofahrt", topic:"Story", ex:"It is a two-hour drive."},
+      {en:"to scratch", de:"kratzen", topic:"Story", ex:"The cat scratched me."},
+      {en:"backyard", de:"Garten; Hinterhof", topic:"Story", ex:"They have a pool in their backyard."},
+      {en:"underneath", de:"unterhalb; unten", topic:"Story", ex:"The box is underneath the table."},
+      {en:"sky", de:"Himmel", topic:"Story", ex:"The sky was full of stars."},
+      {en:"raindrop", de:"Regentropfen", topic:"Story", ex:"The first raindrops fell."},
+      {en:"to ignore", de:"ignorieren; außer Acht lassen", topic:"Story", ex:"You ignored my last five texts."},
+      {en:"lightning", de:"Blitz", topic:"Story", ex:"Lightning can be dangerous."},
+      {en:"thunder", de:"Donner", topic:"Story", ex:"Thunder means the storm is close."},
+      {en:"thunderstorm", de:"Gewitter", topic:"Story", ex:"The thunderstorm caused a flash flood."},
+      {en:"flash flood", de:"Sturzflut", topic:"Story", ex:"A flash flood hit the canyon."},
+      {en:"muscular", de:"muskulös", topic:"Story", ex:"He was tall and muscular."},
+      {en:"headband", de:"Stirnband", topic:"Story", ex:"She wore a red headband."},
+      {en:"weak", de:"schwach", topic:"Story", ex:"I was too weak to walk."},
+      {en:"to get off", de:"absteigen; aussteigen", topic:"Story", ex:"He got off at 51st Street."},
+      {en:"to be missing", de:"fehlen", topic:"Story", ex:"One name was missing."},
+      {en:"ecology", de:"Ökologie; Umwelt-", topic:"Indigenous Americans", ex:"I want to study ecology."},
+      {en:"figure", de:"Figur; Gestalt; Persönlichkeit", topic:"Indigenous Americans", ex:"She is an important figure in history."},
+      {en:"to speak out about sth", de:"seine Meinung deutlich vertreten", topic:"Indigenous Americans", ex:"They speak out about unfair laws."},
+      {en:"core", de:"Inneres; Mittelpunkt; Kern", topic:"Indigenous Americans", ex:"Respect is at the core of the story."},
+      {en:"being", de:"Wesen; Dasein", topic:"Indigenous Americans", ex:"Every living being deserves respect."},
+      {en:"tear", de:"Träne", topic:"Indigenous Americans", ex:"She could not hold back her tears."},
+      {en:"ancestral", de:"Ahnen-; Vorfahren-", topic:"Indigenous Americans", ex:"These are ancestral lands."},
+      {en:"assimilation", de:"Integration; Eingliederung", topic:"Indigenous Americans", ex:"Assimilation often meant losing traditions."},
+      {en:"to assimilate", de:"sich integrieren; sich eingliedern", topic:"Indigenous Americans", ex:"Some people were forced to assimilate."},
+      {en:"bill", de:"Geldschein", topic:"Indigenous Americans", ex:"The suitcase was full of bills."},
+      {en:"honor", de:"Ehre", topic:"Indigenous Americans", ex:"They met in honor of their ancestors."},
+      {en:"sense of belonging", de:"Zugehörigkeitsgefühl", topic:"Indigenous Americans", ex:"Home is where you feel a sense of belonging."},
+      {en:"spiritual", de:"spirituell; geistig", topic:"Indigenous Americans", ex:"The place has a spiritual meaning."},
+      {en:"forced", de:"erzwungen", topic:"Indigenous Americans", ex:"The relocation was forced."},
+      {en:"relocation", de:"Umsiedlung", topic:"Indigenous Americans", ex:"Forced relocation hurt many tribes."},
+      {en:"prejudice", de:"Vorurteil", topic:"Indigenous Americans", ex:"Prejudice can exclude people."},
+      {en:"to expand", de:"sich ausdehnen; erweitern", topic:"Indigenous Americans", ex:"The company wants to expand."},
+      {en:"to convert", de:"konvertieren", topic:"Indigenous Americans", ex:"Some people converted to Christianity."},
+      {en:"Christianity", de:"Christentum", topic:"Indigenous Americans", ex:"Christianity is a world religion."},
+      {en:"custom", de:"Gewohnheit; Brauch; Sitte", topic:"Indigenous Americans", ex:"Christmas customs differ from country to country."},
+      {en:"teen", de:"Teenager; Jugendliche/r", topic:"Indigenous Americans", ex:"Teens often meet at the shopping mall."},
+      {en:"banner", de:"Banner; Spruchband; Transparent", topic:"Indigenous Americans", ex:"They wrote a message on a banner."},
+      {en:"burial shellmound", de:"Grabhügel", topic:"Indigenous Americans", ex:"A burial shellmound must be protected."},
+      {en:"shopping mall", de:"Einkaufszentrum; Shoppingmall", topic:"Indigenous Americans", ex:"They hang out at the shopping mall."},
+      {en:"plaza", de:"Einkaufszentrum; Platz", topic:"Indigenous Americans", ex:"We met at the plaza."},
+      {en:"to desecrate", de:"schänden; entweihen", topic:"Indigenous Americans", ex:"Nobody should desecrate a grave."},
+      {en:"grave", de:"Grab", topic:"Indigenous Americans", ex:"They brought flowers to the grave."},
+      {en:"extinct", de:"ausgestorben", topic:"Indigenous Americans", ex:"The animal almost became extinct."},
+      {en:"colonization", de:"Kolonisierung; Kolonisation", topic:"Indigenous Americans", ex:"Colonization changed many cultures."},
+      {en:"recognition", de:"Erkennung; Anerkennung", topic:"Indigenous Americans", ex:"She deserves recognition for her work."},
+      {en:"to inter", de:"bestatten; beisetzen", topic:"Indigenous Americans", ex:"The remains were interred there."},
+      {en:"remains", de:"Reste; Überreste", topic:"Indigenous Americans", ex:"The remains were found underneath the ground."},
+      {en:"to gather", de:"sammeln; sich versammeln", topic:"Indigenous Americans", ex:"People gather for the ceremony."},
+      {en:"shopper", de:"Käufer/in", topic:"Indigenous Americans", ex:"The shop was full of shoppers."},
+      {en:"foster", de:"Pflege-", topic:"Indigenous Americans", ex:"She lived with foster parents."},
+      {en:"to smoke", de:"rauchen", topic:"Indigenous Americans", ex:"Almost everyone was smoking."},
+      {en:"luckily", de:"glücklicherweise", topic:"Indigenous Americans", ex:"Luckily, there was another tour."},
+      {en:"powwow", de:"Powwow; indigene Feier", topic:"Indigenous Americans", ex:"A powwow often includes dancing."},
+      {en:"effort", de:"Bemühung; Mühe", topic:"Indigenous Americans", ex:"He made no effort to hide it."},
+      {en:"wisdom", de:"Weisheit; Klugheit", topic:"Three Sisters", ex:"The story passes on wisdom."},
+      {en:"separate", de:"separat; getrennt; verschieden", topic:"Three Sisters", ex:"Keep the seeds separate."},
+      {en:"leaf", de:"Blatt", topic:"Three Sisters", ex:"The leaves protected the soil."},
+      {en:"to fold", de:"falten; klappen", topic:"Three Sisters", ex:"Fold the paper in half."},
+      {en:"string", de:"Schnur", topic:"Three Sisters", ex:"Tie it with a string."},
+      {en:"to untie", de:"losbinden; aufschnüren", topic:"Three Sisters", ex:"She untied the string."},
+      {en:"seed", de:"Saat; Samen", topic:"Three Sisters", ex:"Plant the seeds in spring."},
+      {en:"genius", de:"Genie", topic:"Three Sisters", ex:"The method is simple genius."},
+      {en:"bean", de:"Bohne", topic:"Three Sisters", ex:"Beans add nutrients to the soil."},
+      {en:"squash", de:"Kürbis", topic:"Three Sisters", ex:"Squash grows close to the ground."},
+      {en:"imagination", de:"Fantasie; Vorstellungskraft", topic:"Three Sisters", ex:"Use your imagination."},
+      {en:"millennium", de:"Jahrtausend", topic:"Three Sisters", ex:"The tradition lasted for a millennium."},
+      {en:"to lay", de:"legen", topic:"Three Sisters", ex:"Lay the seeds in the soil."},
+      {en:"square", de:"Quadrat; quadratisch", topic:"Three Sisters", ex:"Draw a square field."},
+      {en:"soil", de:"Erde; Boden", topic:"Three Sisters", ex:"The soil needs moisture."},
+      {en:"shore", de:"Ufer; Küste", topic:"Three Sisters", ex:"They lived near the shore."},
+      {en:"savage", de:"Wilde/r", topic:"Three Sisters", ex:"The word savage is disrespectful today."},
+      {en:"to farm", de:"Landwirtschaft betreiben", topic:"Three Sisters", ex:"They farmed corn, beans and squash."},
+      {en:"three-dimensional", de:"dreidimensional", topic:"Three Sisters", ex:"The plants form a three-dimensional system."},
+      {en:"abundance", de:"Fülle; Reichtum", topic:"Three Sisters", ex:"The harvest brought abundance."},
+      {en:"yet", de:"doch; und trotzdem", topic:"Three Sisters", ex:"It was small, yet very strong."},
+      {en:"to eat one's fill", de:"sich satt essen", topic:"Three Sisters", ex:"Everyone could eat their fill."},
+      {en:"firstborn", de:"Erstgeborene/r", topic:"Three Sisters", ex:"The firstborn helped with the harvest."},
+      {en:"stiff", de:"steif", topic:"Three Sisters", ex:"The stem was stiff."},
+      {en:"stem", de:"Stiel; Stängel", topic:"Three Sisters", ex:"The bean climbed the stem."},
+      {en:"growth", de:"Wachstum", topic:"Three Sisters", ex:"Moisture supports growth."},
+      {en:"height", de:"Höhe", topic:"Three Sisters", ex:"The corn gives height."},
+      {en:"vertical", de:"senkrecht; vertikal", topic:"Three Sisters", ex:"The bean grows vertical."},
+      {en:"meanwhile", de:"mittlerweile; in der Zwischenzeit", topic:"Three Sisters", ex:"Meanwhile, the squash covers the soil."},
+      {en:"vine", de:"Rankengewächs", topic:"Three Sisters", ex:"The bean is a vine."},
+      {en:"bristly", de:"stachelig", topic:"Three Sisters", ex:"The plant felt bristly."},
+      {en:"caterpillar", de:"Raupe", topic:"Three Sisters", ex:"A caterpillar ate the leaf."},
+      {en:"base", de:"Boden; Basis", topic:"Three Sisters", ex:"The squash grows at the base."},
+      {en:"moisture", de:"Feuchtigkeit", topic:"Three Sisters", ex:"The leaves keep moisture in the soil."},
+      {en:"teaching", de:"Ausbildung; Unterricht", topic:"Three Sisters", ex:"The story contains a teaching."},
+      {en:"individuality", de:"Individualität", topic:"Three Sisters", ex:"Each plant keeps its individuality."},
+      {en:"to cherish", de:"wertschätzen", topic:"Three Sisters", ex:"We should cherish old traditions."},
+      {en:"to nurture", de:"hegen; fördern", topic:"Three Sisters", ex:"Good soil nurtures growth."},
+      {en:"out here/there", de:"hier/dort draußen", topic:"Check-out", ex:"Out there the air is better."},
+      {en:"materialistic", de:"materialistisch", topic:"Check-out", ex:"The character is very materialistic."},
+      {en:"priority", de:"Priorität; Vorrang", topic:"Check-out", ex:"Learning has priority today."},
+      {en:"controversy", de:"Kontroverse; Auseinandersetzung", topic:"Check-out", ex:"The topic caused controversy."},
+      {en:"acceptable", de:"akzeptabel; annehmbar", topic:"Check-out", ex:"That answer is acceptable."},
+      {en:"to forbid", de:"verbieten", topic:"Check-out", ex:"Some countries forbid certain clothes."},
+      {en:"invisible", de:"unsichtbar", topic:"Check-out", ex:"I wanted to feel invisible."},
+      {en:"disrespectful", de:"respektlos", topic:"Check-out", ex:"That comment was disrespectful."},
+      {en:"to stay in touch with", de:"in Kontakt bleiben mit", topic:"Check-out", ex:"Texts help us stay in touch."},
+      {en:"mail", de:"Post", topic:"Check-out", ex:"I sent it by mail."},
+      {en:"telegraph", de:"Telegraf", topic:"Check-out", ex:"A telegraph sent messages quickly."},
+      {en:"telegram", de:"Telegramm", topic:"Check-out", ex:"They received a telegram."},
+      {en:"east", de:"östlich", topic:"Check-out", ex:"Germany is east of France."},
+      {en:"to connect to", de:"verbinden mit; anschließen", topic:"Check-out", ex:"Connect the words to make a compound."},
+      {en:"express", de:"Expresszug; schnell", topic:"Check-out", ex:"The express left the station."},
+      {en:"stamp", de:"Briefmarke", topic:"Check-out", ex:"Put a stamp on the letter."},
+      {en:"anniversary", de:"Jubiläum; Jahrestag", topic:"Check-out", ex:"They celebrated their anniversary."},
+      {en:"Western", de:"Western", topic:"Check-out", ex:"Rio Grande is a famous Western."},
+      {en:"wolf", de:"Wolf", topic:"Check-out", ex:"Wolves live in packs."},
+      {en:"authentic", de:"authentisch", topic:"Check-out", ex:"The story feels authentic."},
+      {en:"reality", de:"Realität; Wirklichkeit", topic:"Check-out", ex:"The film mixes fiction and reality."},
+      {en:"obituary", de:"Nachruf", topic:"Check-out", ex:"The newspaper printed an obituary."},
+      {en:"sadness", de:"Traurigkeit", topic:"Check-out", ex:"The ending is full of sadness."},
+      {en:"to look after", de:"aufpassen auf", topic:"Phrasal Verbs", ex:"Can you look after my dog?"},
+      {en:"to look at", de:"ansehen", topic:"Phrasal Verbs", ex:"Look at the photo."},
+      {en:"to look for", de:"suchen nach", topic:"Phrasal Verbs", ex:"I am looking for my keys."},
+      {en:"to look forward to", de:"sich freuen auf", topic:"Phrasal Verbs", ex:"I look forward to the weekend."},
+      {en:"to look up", de:"nachschlagen", topic:"Phrasal Verbs", ex:"Look up the word in a dictionary."},
+      {en:"to get back", de:"zurückkommen", topic:"Phrasal Verbs", ex:"When did you get back?"},
+      {en:"to get on", de:"miteinander auskommen", topic:"Phrasal Verbs", ex:"They get on well."},
+      {en:"to get sth", de:"etwas verstehen", topic:"Phrasal Verbs", ex:"I don't get this joke."},
+      {en:"to get to", de:"hinkommen; erreichen", topic:"Phrasal Verbs", ex:"How do we get to the museum?"},
+      {en:"to take off", de:"ausziehen; starten; abheben", topic:"Phrasal Verbs", ex:"Take your shoes off."},
+      {en:"to take down", de:"zur Strecke bringen; notieren", topic:"Fictional texts", ex:"The detective took down the suspect."},
+      {en:"fictional", de:"fiktional; fiktiv; erdichtet", topic:"Fictional texts", ex:"The events are half fictional and half real."},
+      {en:"e-reader", de:"E-Book-Reader", topic:"Fictional texts", ex:"I have lots of books on my e-reader."},
+      {en:"bookworm", de:"Bücherwurm", topic:"Fictional texts", ex:"A bookworm loves reading."},
+      {en:"average", de:"Durchschnitt; durchschnittlich", topic:"Fictional texts", ex:"The average age in our class is 15."},
+      {en:"sequel", de:"Fortsetzung; Nachspiel", topic:"Fictional texts", ex:"The author is writing a sequel."},
+      {en:"spy", de:"Spion/in; Spionage-", topic:"Fictional texts", ex:"My brother is a spy for them."},
+      {en:"invasion", de:"Einmarsch; Überfall; Invasion", topic:"Fictional texts", ex:"The invasion started the war."},
+      {en:"operation", de:"Operation; Betrieb; Einsatz", topic:"Fictional texts", ex:"The rescue operation began at night."},
+      {en:"vengeance", de:"Rache", topic:"Fictional texts", ex:"The villain wanted vengeance."},
+      {en:"reminder", de:"Erinnerung; Mahnung", topic:"Fictional texts", ex:"This note is a reminder."},
+      {en:"to get underway", de:"ins Rollen bringen", topic:"Fictional texts", ex:"The project got underway."},
+      {en:"to reiterate", de:"wiederholen", topic:"Fictional texts", ex:"Let me reiterate the rule."},
+      {en:"to be at stake", de:"es geht um; auf dem Spiel stehen", topic:"Fictional texts", ex:"My future is at stake."},
+      {en:"once and for all", de:"ein für alle Mal", topic:"Fictional texts", ex:"Once and for all: no."},
+      {en:"knee", de:"Knie", topic:"Fictional texts", ex:"Knee injuries are typical in soccer."},
+      {en:"wicked", de:"bösartig; gemein", topic:"Fictional texts", ex:"The wicked character lied."},
+      {en:"genre", de:"Genre; Gattung", topic:"Fictional texts", ex:"Crime is my favourite book genre."},
+      {en:"adventure", de:"Abenteuer", topic:"Fictional texts", ex:"An adventure story often includes danger and travel."},
+      {en:"comics", de:"Comics", topic:"Fictional texts", ex:"Comics tell stories with pictures and speech bubbles."},
+      {en:"crime", de:"Krimi; Verbrechen", topic:"Fictional texts", ex:"A detective is typical of a crime story."},
+      {en:"dystopia", de:"Dystopie; negative Zukunftswelt", topic:"Fictional texts", ex:"A dystopia shows a frightening future society."},
+      {en:"fantasy", de:"Fantasy; Fantasiegeschichte", topic:"Fictional texts", ex:"Fantasy stories often include magic."},
+      {en:"historical fiction", de:"historischer Roman; historische Erzählung", topic:"Fictional texts", ex:"Historical fiction is set in the past."},
+      {en:"horror", de:"Horror", topic:"Fictional texts", ex:"Horror stories are meant to scare the reader."},
+      {en:"mystery", de:"Mystery; Geheimnisgeschichte", topic:"Fictional texts", ex:"A mystery story keeps the reader guessing."},
+      {en:"romance", de:"Liebesgeschichte; Romanze", topic:"Fictional texts", ex:"A romance focuses on love and relationships."},
+      {en:"science fiction", de:"Science-Fiction", topic:"Fictional texts", ex:"Science fiction often deals with technology or space."},
+      {en:"teen comedy", de:"Teenager-Komödie", topic:"Fictional texts", ex:"A teen comedy is funny and about teenagers."},
+      {en:"drama", de:"Drama", topic:"Fictional texts", ex:"A drama often shows serious conflicts."},
+      {en:"travel fiction", de:"Reiseliteratur; Reiseerzählung", topic:"Fictional texts", ex:"Travel fiction is about journeys and new places."},
+      {en:"setting", de:"Schauplatz; Umgebung", topic:"Fictional texts", ex:"The setting of the story is New York."},
+      {en:"atmosphere", de:"Atmosphäre; Stimmung", topic:"Fictional texts", ex:"Dark clouds create a scary atmosphere."},
+      {en:"personal features", de:"persönliche Merkmale; äußere Merkmale", topic:"Fictional texts", ex:"Hair colour and height are personal features."},
+      {en:"body language", de:"Körpersprache", topic:"Fictional texts", ex:"Body language can show fear or confidence."},
+      {en:"suspense", de:"Spannung", topic:"Fictional texts", ex:"Short sentences can create suspense."},
+      {en:"woolen", de:"Wolle; wollen", topic:"Culture box", ex:"The blanket is woolen."},
+      {en:"fabric", de:"Stoff", topic:"Culture box", ex:"This fabric has a pattern."},
+      {en:"pattern", de:"Muster", topic:"Culture box", ex:"The fabric has a red pattern."},
+      {en:"tipi", de:"Tipi; Zelt", topic:"Culture box", ex:"A tipi is a type of tent."},
+      {en:"herd", de:"Herde; Rudel", topic:"Culture box", ex:"A herd of buffalo crossed the plain."},
+      {en:"buffalo", de:"Büffel", topic:"Culture box", ex:"Buffalo were important for many tribes."},
+      {en:"totem pole", de:"Totempfahl", topic:"Culture box", ex:"The totem pole shows family symbols."},
+      {en:"longhouse", de:"Langhaus", topic:"Culture box", ex:"Several families lived in a longhouse."},
+      {en:"approach", de:"Herangehensweise; Annäherung", topic:"Culture box", ex:"This approach helps you remember words."},
+      {en:"then", de:"damals; dann", topic:"Culture box", ex:"Then people lived differently."},
+      {en:"now", de:"heute; jetzt", topic:"Culture box", ex:"Now the population is rising."},
+      {en:"diet", de:"Ernährung; Diät", topic:"Culture box", ex:"Corn was part of their diet."},
+      {en:"monument", de:"Monument; Denkmal", topic:"Culture box", ex:"The monument honors the past."}
+    ];
+
+    const state = {
+      mode: "flash",
+      topic: "Alle Themen",
+      direction: "en-de",
+      dueOnly: false,
+      weakOnly: false,
+      current: null,
+      answered: false,
+      test: null,
+      progress: JSON.parse(localStorage.getItem("ac3-progress") || "{}")
+    };
+
+    const topicFilter = document.querySelector("#topicFilter");
+    const direction = document.querySelector("#direction");
+    const dueOnly = document.querySelector("#dueOnly");
+    const weakOnly = document.querySelector("#weakOnly");
+    const exercise = document.querySelector("#exercise");
+    const wordlist = document.querySelector("#wordlist");
+
+    function save() {
+      localStorage.setItem("ac3-progress", JSON.stringify(state.progress));
+      renderStats();
+    }
+
+    function key(word) {
+      return word.en;
+    }
+
+    function record(word, ok) {
+      const id = key(word);
+      const p = state.progress[id] || {right:0, wrong:0, box:0, due:0, paperOk:0, paperSpelling:0, paperWrong:0};
+      if (ok) {
+        p.right += 1;
+        p.box = Math.min((p.box || 0) + 1, 5);
+      } else {
+        p.wrong += 1;
+        p.box = 0;
+      }
+      p.last = Date.now();
+      p.due = nextDueDate(p.box, ok);
+      state.progress[id] = p;
+      save();
+    }
+
+    function recordPaper(word, result) {
+      const id = key(word);
+      const p = state.progress[id] || {right:0, wrong:0, box:0, due:0, paperOk:0, paperSpelling:0, paperWrong:0};
+      if (result === "ok") p.paperOk = (p.paperOk || 0) + 1;
+      if (result === "spelling") {
+        p.paperSpelling = (p.paperSpelling || 0) + 1;
+        p.box = Math.min(p.box || 0, 1);
+        p.due = nextDueDate(0, false);
+      }
+      if (result === "wrong") {
+        p.paperWrong = (p.paperWrong || 0) + 1;
+        p.box = 0;
+        p.due = nextDueDate(0, false);
+      }
+      p.lastPaper = Date.now();
+      state.progress[id] = p;
+      save();
+    }
+
+    function score(word) {
+      const p = state.progress[key(word)] || {right:0, wrong:0, box:0, paperSpelling:0, paperWrong:0};
+      return p.right - p.wrong * 1.5 - (p.paperSpelling || 0) * .7 - (p.paperWrong || 0) * 1.2;
+    }
+
+    function nextDueDate(box, ok) {
+      const days = ok ? [0, 1, 3, 7, 14, 30][box] || 30 : 0;
+      const date = new Date();
+      date.setHours(0, 0, 0, 0);
+      date.setDate(date.getDate() + days);
+      return date.getTime();
+    }
+
+    function isDue(word) {
+      const p = state.progress[key(word)];
+      if (!p || !p.due) return true;
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      return p.due <= today.getTime();
+    }
+
+    function filteredWords() {
+      let list = words.filter(w => state.topic === "Alle Themen" || w.topic === state.topic);
+      if (state.dueOnly) list = list.filter(isDue);
+      if (state.weakOnly) list = list.filter(w => score(w) < 2);
+      return list.length ? list : words;
+    }
+
+    function pickWord() {
+      const list = filteredWords();
+      const weighted = [...list].sort((a, b) => score(a) - score(b));
+      return weighted[Math.floor(Math.random() * Math.min(18, weighted.length))];
+    }
+
+    function promptOf(word) {
+      return state.direction === "en-de" ? word.en : word.de;
+    }
+
+    function answerOf(word) {
+      return state.direction === "en-de" ? word.de : word.en;
+    }
+
+    function normalize(value) {
+      return value.toLowerCase().trim().replace(/[.;,!?]/g, "").replace(/\s+/g, " ");
+    }
+
+    function acceptAnswer(input, expected) {
+      const a = normalize(input);
+      return expected.split(";").some(part => {
+        const p = normalize(part);
+        return a === p || a.includes(p) || p.includes(a);
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      })[char]);
+    }
+
+    function next() {
+      state.current = pickWord();
+      state.answered = false;
+      renderExercise();
+      renderList();
+    }
+
+    function speak(text) {
+      if (!("speechSynthesis" in window)) return;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "en-US";
+      utterance.rate = .88;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utterance);
+    }
+
+    function renderExercise() {
+      const word = state.current || pickWord();
+      state.current = word;
+      if (state.mode === "flash") renderFlash(word);
+      if (state.mode === "choice") renderChoice(word);
+      if (state.mode === "cloze") renderCloze(word);
+      if (state.mode === "sentence") renderSentence(word);
+      if (state.mode === "spelling") renderSpelling(word);
+      if (state.mode === "analysis") renderAnalysis();
+      if (state.mode === "test") renderTest();
+    }
+
+    const analysisTasks = [
+      {
+        title: "Genre erkennen",
+        prompt: "A detective follows clues after a valuable object disappears.",
+        question: "Which genre fits best?",
+        answer: "crime",
+        model: "This is a crime story because there is a detective, clues and a disappearance."
+      },
+      {
+        title: "Atmosphäre belegen",
+        prompt: "Dark clouds covered the sky. The street was empty and I heard footsteps behind me.",
+        question: "Which words create suspense?",
+        answer: "dark clouds, empty, footsteps behind me",
+        model: "The words 'dark', 'empty' and 'footsteps behind me' create suspense."
+      },
+      {
+        title: "Setting bestimmen",
+        prompt: "When I arrived in Midtown Manhattan, I left the subway station and walked down 51st Street.",
+        question: "What is the setting?",
+        answer: "Midtown Manhattan / subway station / 51st Street",
+        model: "The setting is Midtown Manhattan, near a subway station."
+      },
+      {
+        title: "Figurenbeschreibung",
+        prompt: "He was tall, strong and wore a black jacket. He stared at me without smiling.",
+        question: "Name one personal feature and one body-language detail.",
+        answer: "tall/strong; stared without smiling",
+        model: "A personal feature is that he is tall and strong. His body language is threatening because he stares."
+      },
+      {
+        title: "Vergleich",
+        prompt: "Text A is dark and frightening. Text B is sunny and romantic.",
+        question: "Which text is more suspenseful? Give a reason.",
+        answer: "Text A",
+        model: "Text A is more suspenseful because the atmosphere is dark and frightening."
+      },
+      {
+        title: "Passendes Foto begründen",
+        prompt: "A photo shows a woman looking back nervously in a crowded city street.",
+        question: "Which detail would you use as evidence?",
+        answer: "looking back nervously / city street",
+        model: "The photo matches a suspenseful city scene because the woman looks back nervously."
+      }
+    ];
+
+    function pickAnalysisTask() {
+      return analysisTasks[Math.floor(Math.random() * analysisTasks.length)];
+    }
+
+    function renderAnalysis() {
+      const task = pickAnalysisTask();
+      exercise.innerHTML = `
+        <article class="card">
+          <span class="tag">Textanalyse · ${task.title}</span>
+          <p class="example">${task.prompt}</p>
+          <div class="word" style="font-size: clamp(24px, 4vw, 38px);">${task.question}</div>
+          <div class="analysis-grid">
+            <div class="analysis-item"><b>Raster</b><span>genre · setting · atmosphere · people · personal features · clothes · action · body language · suspense</span></div>
+            <div class="analysis-item"><b>Pflicht</b><span>Schreibe erst Stichworte auf Papier. Danach erst Musterlösung zeigen.</span></div>
+          </div>
+          <div class="feedback" id="analysisSolution" hidden>
+            <b>Beleg:</b> ${task.answer}<br>
+            <b>Mustersatz:</b> ${task.model}
+          </div>
+        </article>
+        <div class="actions">
+          <button class="accent" id="showAnalysis">Musterlösung zeigen</button>
+          <button class="ghost" id="analysisWeak">unsicher markieren</button>
+          <button id="nextAnalysis">Nächste Analyse</button>
+        </div>
+      `;
+      document.querySelector("#showAnalysis").onclick = () => {
+        document.querySelector("#analysisSolution").hidden = false;
+      };
+      document.querySelector("#analysisWeak").onclick = () => {
+        const synthetic = { en: `Textanalyse: ${task.title}`, de: task.question };
+        recordPaper(synthetic, "wrong");
+        renderAnalysis();
+      };
+      document.querySelector("#nextAnalysis").onclick = renderAnalysis;
+    }
+
+    function trickyIndexes(text) {
+      const lower = text.toLowerCase();
+      const indexes = new Set();
+      const patterns = [
+        "ough", "igh", "tion", "sion", "ious", "eous", "ie", "ei", "ea", "ee", "oo", "ou", "ow",
+        "ph", "th", "ch", "sh", "ck", "qu", "y", "wr", "kn", "gn", "mb", "ll", "ss", "nn", "mm",
+        "rr", "pp", "tt", "ff", "cc", "sc", "ce", "ci", "ge", "gi"
+      ];
+      patterns.forEach(pattern => {
+        let start = lower.indexOf(pattern);
+        while (start !== -1) {
+          for (let i = start; i < start + pattern.length; i += 1) indexes.add(i);
+          start = lower.indexOf(pattern, start + 1);
+        }
+      });
+      return indexes;
+    }
+
+    function visualWord(text) {
+      const indexes = trickyIndexes(text);
+      let html = "";
+      let buffer = "";
+      let tricky = indexes.has(0);
+      [...text].forEach((char, index) => {
+        const current = indexes.has(index);
+        if (current !== tricky && buffer) {
+          html += `<span class="chunk ${tricky ? "tricky" : ""}">${escapeHtml(buffer)}</span>`;
+          buffer = "";
+        }
+        tricky = current;
+        buffer += char;
+      });
+      if (buffer) html += `<span class="chunk ${tricky ? "tricky" : ""}">${escapeHtml(buffer)}</span>`;
+      return html;
+    }
+
+    function letterMap(text) {
+      const indexes = trickyIndexes(text);
+      return [...text].map((char, index) => `<span class="${indexes.has(index) ? "tricky" : ""}">${escapeHtml(char)}</span>`).join("");
+    }
+
+    function exactSpelling(input, expected) {
+      return input.trim().toLowerCase() === expected.trim().toLowerCase();
+    }
+
+    function diffHtml(input, expected) {
+      const typed = input.trim();
+      const max = Math.max(typed.length, expected.length);
+      let typedHtml = "";
+      let expectedHtml = "";
+      for (let i = 0; i < max; i += 1) {
+        const a = typed[i] || "□";
+        const b = expected[i] || "□";
+        const same = (typed[i] || "").toLowerCase() === (expected[i] || "").toLowerCase();
+        typedHtml += same ? escapeHtml(a) : `<mark>${escapeHtml(a)}</mark>`;
+        expectedHtml += same ? escapeHtml(b) : `<mark>${escapeHtml(b)}</mark>`;
+      }
+      return { typedHtml, expectedHtml };
+    }
+
+    function spellingHint(word) {
+      const lower = word.en.toLowerCase();
+      const hints = [];
+      if (/(.)\1/.test(lower)) hints.push("Achte auf Doppelbuchstaben.");
+      if (lower.includes("y")) hints.push("Merke dir die Position von y.");
+      if (lower.includes("tion") || lower.includes("sion")) hints.push("Endung bewusst als Block merken.");
+      if (lower.includes("igh")) hints.push("igh ist ein gemeinsamer Lautblock.");
+      if (lower.includes("ie") || lower.includes("ei")) hints.push("ie/ei-Reihenfolge genau anschauen.");
+      if (lower.includes("ou") || lower.includes("ow") || lower.includes("ea") || lower.includes("ee")) hints.push("Vokalgruppe als Bild merken.");
+      return hints.length ? hints.join(" ") : "Sprich das Wort langsam, zerlege es in Teile und merke dir die Wortform als Bild.";
+    }
+
+    function renderPaperCheck(word) {
+      state.answered = false;
+      exercise.innerHTML = `
+        <article class="card">
+          <span class="tag">Papier-Check</span>
+          <div class="translation">${word.de}</div>
+          <p class="example">Schreibe die englische Vokabel jetzt noch einmal auf ein leeres Blatt. Nicht tippen. Erst danach die Lösung einblenden.</p>
+          <div class="word" hidden>${word.en}</div>
+          <p class="mini" hidden>Vergleiche streng: Ist das Wort ganz falsch, oder stimmt die Bedeutung und nur die Schreibweise ist falsch?</p>
+        </article>
+        <div class="actions">
+          <button class="accent" id="showPaperAnswer">Lösung zeigen</button>
+          <button class="ghost" id="paperOk" disabled>richtig geschrieben</button>
+          <button class="ghost" id="paperSpelling" disabled>nur Schreibfehler</button>
+          <button class="ghost" id="paperWrong" disabled>Wort komplett falsch</button>
+        </div>
+      `;
+      document.querySelector("#showPaperAnswer").onclick = () => {
+        document.querySelector(".word").hidden = false;
+        document.querySelector(".card .mini").hidden = false;
+        document.querySelector("#paperOk").disabled = false;
+        document.querySelector("#paperSpelling").disabled = false;
+        document.querySelector("#paperWrong").disabled = false;
+      };
+      document.querySelector("#paperOk").onclick = () => { recordPaper(word, "ok"); next(); };
+      document.querySelector("#paperSpelling").onclick = () => { recordPaper(word, "spelling"); next(); };
+      document.querySelector("#paperWrong").onclick = () => { recordPaper(word, "wrong"); next(); };
+    }
+
+    function renderFlash(word) {
+      exercise.innerHTML = `
+        <article class="card">
+          <span class="tag">${word.topic}</span>
+          <div class="word">${promptOf(word)}</div>
+          <div class="translation" hidden>${answerOf(word)}</div>
+          <p class="example">${word.ex}</p>
+          <p class="mini">Leeres Blatt: Schreibe erst deine Antwort auf. Danach wähle hier aus.</p>
+          <p class="mini">Papier-Regel: Antwort erst mit der Hand schreiben, dann hier aufdecken.</p>
+        </article>
+        <div class="actions">
+          <button class="accent" id="showAnswer">Antwort zeigen</button>
+          <button class="ghost" id="speakBtn">Anhören</button>
+          <button class="ghost" id="wrongBtn" disabled>Noch unsicher</button>
+          <button id="rightBtn" disabled>Sitzt</button>
+          <button class="ghost" id="nextBtn">Weiter</button>
+        </div>
+      `;
+      document.querySelector("#showAnswer").onclick = () => {
+        document.querySelector(".translation").hidden = false;
+        document.querySelector("#wrongBtn").disabled = false;
+        document.querySelector("#rightBtn").disabled = false;
+      };
+      document.querySelector("#speakBtn").onclick = () => speak(word.en);
+      document.querySelector("#wrongBtn").onclick = () => { record(word, false); renderPaperCheck(word); };
+      document.querySelector("#rightBtn").onclick = () => { record(word, true); renderPaperCheck(word); };
+      document.querySelector("#nextBtn").onclick = next;
+    }
+
+    function renderChoice(word) {
+      const options = [answerOf(word)];
+      const pool = words.filter(w => w !== word).sort(() => Math.random() - .5);
+      for (const item of pool) {
+        const option = state.direction === "en-de" ? item.de : item.en;
+        if (!options.includes(option)) options.push(option);
+        if (options.length === 4) break;
+      }
+      options.sort(() => Math.random() - .5);
+      exercise.innerHTML = `
+        <article class="card">
+          <span class="tag">${word.topic}</span>
+          <div class="word">${promptOf(word)}</div>
+          <p class="example">${word.ex}</p>
+          <div class="choices">
+            ${options.map(option => `<button data-option="${option.replaceAll('"', '&quot;')}">${option}</button>`).join("")}
+          </div>
+          <div class="feedback" id="feedback"></div>
+        </article>
+        <div class="actions">
+          <button class="ghost" id="speakBtn">Anhören</button>
+          <button id="nextBtn">Papier-Schritt</button>
+        </div>
+      `;
+      document.querySelectorAll("[data-option]").forEach(button => {
+        button.onclick = () => {
+          if (state.answered) return;
+          state.answered = true;
+          const ok = button.dataset.option === answerOf(word);
+          record(word, ok);
+          button.classList.add(ok ? "correct" : "wrong");
+          document.querySelector("#feedback").className = `feedback ${ok ? "good" : "bad"}`;
+          document.querySelector("#feedback").textContent = ok ? "Richtig." : `Fast. Richtig ist: ${answerOf(word)}`;
+        };
+      });
+      document.querySelector("#speakBtn").onclick = () => speak(word.en);
+      document.querySelector("#nextBtn").onclick = () => {
+        if (state.answered) renderPaperCheck(word);
+        else next();
+      };
+    }
+
+    function renderCloze(word) {
+      const blanked = word.ex.replace(new RegExp(word.en.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"), "_____");
+      exercise.innerHTML = `
+        <article class="card">
+          <span class="tag">${word.topic}</span>
+          <p class="example">${blanked.includes("_____") ? blanked : word.ex + " → _____"}</p>
+          <div class="translation">${word.de}</div>
+          <p class="mini">Erst handschriftlich ergänzen, dann eintippen. Das trainiert Abruf und Rechtschreibung.</p>
+          <input id="clozeInput" placeholder="englisches Wort einsetzen">
+          <div class="feedback" id="feedback"></div>
+        </article>
+        <div class="actions">
+          <button class="accent" id="checkBtn">Prüfen</button>
+          <button class="ghost" id="solutionBtn">Lösung</button>
+          <button id="nextBtn">Papier-Schritt</button>
+        </div>
+      `;
+      document.querySelector("#checkBtn").onclick = () => {
+        if (state.answered) return;
+        const value = document.querySelector("#clozeInput").value;
+        const ok = acceptAnswer(value, word.en);
+        record(word, ok);
+        state.answered = true;
+        document.querySelector("#feedback").className = `feedback ${ok ? "good" : "bad"}`;
+        document.querySelector("#feedback").textContent = ok ? "Richtig benutzt." : `Lösung: ${word.en}`;
+      };
+      document.querySelector("#solutionBtn").onclick = () => {
+        document.querySelector("#feedback").className = "feedback";
+        document.querySelector("#feedback").textContent = `${word.en} = ${word.de}`;
+      };
+      document.querySelector("#nextBtn").onclick = () => {
+        if (state.answered) renderPaperCheck(word);
+        else next();
+      };
+      document.querySelector("#clozeInput").focus();
+    }
+
+    function renderSentence(word) {
+      exercise.innerHTML = `
+        <article class="card sentence">
+          <span class="tag">${word.topic}</span>
+          <div class="word">${word.en}</div>
+          <div class="translation">${word.de}</div>
+          <p class="example">Modellsatz: ${word.ex}</p>
+          <textarea id="sentenceInput" placeholder="Schreibe einen eigenen englischen Satz mit '${word.en}'."></textarea>
+          <div class="feedback" id="feedback"></div>
+        </article>
+        <div class="actions">
+          <button class="accent" id="checkBtn">Satz prüfen</button>
+          <button class="ghost" id="speakBtn">Wort anhören</button>
+          <button id="nextBtn">Papier-Schritt</button>
+        </div>
+        <p class="mini">Erst auf Papier formulieren, dann eintippen. Da diese Offline-App keine KI-Korrektur nutzt, prüft sie Mindestlänge und ob das Zielwort vorkommt. Danach den Satz laut lesen: Das macht die Nutzung abrufbar.</p>
+      `;
+      document.querySelector("#checkBtn").onclick = () => {
+        if (state.answered) return;
+        const value = document.querySelector("#sentenceInput").value;
+        const ok = normalize(value).includes(normalize(word.en).split(" ")[0]) && value.trim().split(/\s+/).length >= 6;
+        record(word, ok);
+        state.answered = true;
+        document.querySelector("#feedback").className = `feedback ${ok ? "good" : "bad"}`;
+        document.querySelector("#feedback").textContent = ok ? "Gut: jetzt laut lesen und weiter." : `Baue '${word.en}' in einen ganzen Satz ein.`;
+      };
+      document.querySelector("#speakBtn").onclick = () => speak(word.en);
+      document.querySelector("#nextBtn").onclick = () => {
+        if (state.answered) renderPaperCheck(word);
+        else next();
+      };
+      document.querySelector("#sentenceInput").focus();
+    }
+
+    function renderSpelling(word) {
+      exercise.innerHTML = `
+        <article class="card">
+          <span class="tag">${word.topic} · Spelling</span>
+          <div class="translation">${word.de}</div>
+          <div class="spelling-word" id="spellingWord">${visualWord(word.en)}</div>
+          <div class="letter-map">${letterMap(word.en)}</div>
+          <p class="example">${spellingHint(word)}</p>
+          <p class="mini">Look → Cover → Write → Check: Wortbild ansehen, dann abdecken, auf Papier schreiben und erst danach exakt eintippen.</p>
+          <input id="spellingInput" placeholder="erst auf Papier, dann hier exakt eintippen" autocomplete="off">
+          <div class="feedback" id="feedback"></div>
+          <div id="spellingDiff"></div>
+        </article>
+        <div class="actions">
+          <button class="ghost" id="coverBtn">Wort abdecken</button>
+          <button class="accent" id="checkSpellingBtn">Spelling prüfen</button>
+          <button class="ghost" id="speakBtn">Anhören</button>
+          <button id="nextBtn">Weiter</button>
+        </div>
+      `;
+      document.querySelector("#coverBtn").onclick = () => {
+        document.querySelector("#spellingWord").textContent = "••••••••";
+        document.querySelector(".letter-map").hidden = true;
+        document.querySelector("#spellingInput").focus();
+      };
+      document.querySelector("#checkSpellingBtn").onclick = () => {
+        if (state.answered) return;
+        const input = document.querySelector("#spellingInput").value;
+        const ok = exactSpelling(input, word.en);
+        state.answered = true;
+        record(word, ok);
+        recordPaper(word, ok ? "ok" : "spelling");
+        const feedback = document.querySelector("#feedback");
+        feedback.className = `feedback ${ok ? "good" : "bad"}`;
+        feedback.textContent = ok ? "Exakt richtig geschrieben." : "Schreibfehler. Vergleiche die markierten Stellen und schreibe das Wort dreimal auf Papier.";
+        const diff = diffHtml(input, word.en);
+        document.querySelector("#spellingDiff").innerHTML = `
+          <div class="diff">
+            <div class="diff-box"><b>getippt</b><div class="diff-text">${diff.typedHtml || "—"}</div></div>
+            <div class="diff-box"><b>richtig</b><div class="diff-text">${diff.expectedHtml}</div></div>
+          </div>
+        `;
+        document.querySelector("#spellingWord").innerHTML = visualWord(word.en);
+        document.querySelector(".letter-map").hidden = false;
+      };
+      document.querySelector("#speakBtn").onclick = () => speak(word.en);
+      document.querySelector("#nextBtn").onclick = next;
+      document.querySelector("#spellingInput").focus();
+    }
+
+    function makeTest(size, directionMode) {
+      const list = filteredWords()
+        .slice()
+        .sort((a, b) => score(a) - score(b) || Math.random() - .5)
+        .slice(0, size);
+      state.test = {
+        direction: directionMode,
+        words: list,
+        checked: false,
+        results: []
+      };
+      renderTest();
+    }
+
+    function renderTest() {
+      if (!state.test) {
+        exercise.innerHTML = `
+          <article class="card">
+            <span class="tag">Vokabeltest</span>
+            <div class="word">Schriftliche Probe</div>
+            <p class="example">Wähle Länge und Richtung. Dann werden die Lösungen versteckt abgefragt, so wie im Test: erst auf Papier schreiben, dann eintippen, prüfen, Fehler gezielt wiederholen.</p>
+            <div class="test-setup">
+              <button class="accent" data-test-size="10">10 Wörter</button>
+              <button data-test-size="20">20 Wörter</button>
+              <button data-test-size="30">30 Wörter</button>
+            </div>
+            <p class="mini">Tipp: Für die Klassenarbeit zuerst Deutsch → Englisch trainieren. Das ist schwerer und deckt Rechtschreibung besser auf. Die App terminiert richtige Wörter automatisch neu.</p>
+          </article>
+        `;
+        document.querySelectorAll("[data-test-size]").forEach(button => {
+          button.onclick = () => makeTest(Number(button.dataset.testSize), state.direction);
+        });
+        return;
+      }
+
+      if (state.test.checked) {
+        renderTestResult();
+        return;
+      }
+
+      const label = state.test.direction === "en-de" ? "Deutsch eintragen" : "Englisch eintragen";
+      exercise.innerHTML = `
+        <article class="card">
+          <span class="tag">Test läuft · ${state.test.words.length} Wörter</span>
+          <div class="word">Ohne Spicken</div>
+          <p class="example">Schreibe die Antworten zuerst auf Papier. Tippe sie danach ein. Teilantworten mit Semikolon sind erlaubt, aber Rechtschreibung zählt besonders bei Englisch.</p>
+          <div>
+            ${state.test.words.map((word, index) => `
+              <label class="test-row">
+                <span><b>${index + 1}. ${state.test.direction === "en-de" ? word.en : word.de}</b><br><small>${word.topic}</small></span>
+                <input data-test-answer="${index}" autocomplete="off" placeholder="${label}">
+              </label>
+            `).join("")}
+          </div>
+          <div class="feedback" id="feedback"></div>
+        </article>
+        <div class="actions">
+          <button class="accent" id="checkTestBtn">Test auswerten</button>
+          <button class="ghost" id="cancelTestBtn">Neu starten</button>
+        </div>
+      `;
+      document.querySelector("#checkTestBtn").onclick = checkTest;
+      document.querySelector("#cancelTestBtn").onclick = () => { state.test = null; renderTest(); };
+      document.querySelector("[data-test-answer='0']")?.focus();
+    }
+
+    function checkTest() {
+      const results = state.test.words.map((word, index) => {
+        const input = document.querySelector(`[data-test-answer="${index}"]`).value;
+        const expected = state.test.direction === "en-de" ? word.de : word.en;
+        const ok = acceptAnswer(input, expected);
+        record(word, ok);
+        return { word, input, expected, ok };
+      });
+      state.test.results = results;
+      state.test.checked = true;
+      renderTestResult();
+    }
+
+    function renderTestResult() {
+      const results = state.test.results;
+      const right = results.filter(result => result.ok).length;
+      const percent = Math.round(right / results.length * 100);
+      const grade =
+        percent >= 92 ? "1" :
+        percent >= 80 ? "2" :
+        percent >= 65 ? "3" :
+        percent >= 50 ? "4" :
+        percent >= 25 ? "5" : "6";
+      const wrong = results.filter(result => !result.ok);
+      exercise.innerHTML = `
+        <article class="card">
+          <span class="tag">Auswertung</span>
+          <div class="word">${right}/${results.length} richtig</div>
+          <div class="translation">${percent}% · ungefähr Note ${grade}</div>
+          <p class="example">${wrong.length ? "Diese Fehler jetzt sofort noch einmal lernen. Genau hier entsteht der Lerneffekt." : "Sehr stark. Jetzt einmal schlafen lassen und morgen kurz wiederholen."}</p>
+          <div class="result-table">
+            ${results.map(result => `
+              <div class="result-row">
+                <span><b>${result.word.en}</b><small>${result.word.de}</small></span>
+                <span>${result.input || "—"}</span>
+                <span class="${result.ok ? "feedback good" : "feedback bad"}">${result.ok ? "richtig" : `richtig: ${result.expected}`}</span>
+              </div>
+            `).join("")}
+          </div>
+        </article>
+        <div class="actions">
+          <button class="accent" id="repeatWrongBtn" ${wrong.length ? "" : "disabled"}>Nur Fehler üben</button>
+          <button id="newTestBtn">Neuer Test</button>
+          <button class="ghost" id="copyResultBtn">Ergebnis kopieren</button>
+        </div>
+      `;
+      document.querySelector("#repeatWrongBtn").onclick = () => {
+        state.weakOnly = true;
+        weakOnly.classList.add("accent");
+        weakOnly.classList.remove("ghost");
+        state.test = {
+          direction: state.direction,
+          words: wrong.map(result => result.word),
+          checked: false,
+          results: []
+        };
+        renderTest();
+      };
+      document.querySelector("#newTestBtn").onclick = () => { state.test = null; renderTest(); };
+      document.querySelector("#copyResultBtn").onclick = () => {
+        const text = results.map((result, index) => `${index + 1}. ${result.word.en} / ${result.word.de} | Antwort: ${result.input || "-"} | ${result.ok ? "richtig" : "falsch"}`).join("\n");
+        navigator.clipboard?.writeText(`Vokabeltest: ${right}/${results.length} richtig (${percent}%, Note ${grade})\n${text}`);
+      };
+    }
+
+    function renderList() {
+      const list = filteredWords();
+      wordlist.innerHTML = list.map(word => {
+        const p = state.progress[key(word)] || {right:0, wrong:0, box:0, paperSpelling:0, paperWrong:0};
+        const dueText = isDue(word) ? "heute fällig" : `Box ${p.box}`;
+        const paperText = (p.paperSpelling || p.paperWrong) ? ` · Papierfehler ${p.paperSpelling || 0}/${p.paperWrong || 0}` : "";
+        return `<div class="row"><span><b>${word.en}</b><br><small>${word.topic} · ${p.right}/${p.wrong} · ${dueText}${paperText}</small></span><span>${word.de}</span></div>`;
+      }).join("");
+    }
+
+    function renderStats() {
+      const entries = Object.values(state.progress);
+      const right = entries.reduce((sum, p) => sum + p.right, 0);
+      const wrong = entries.reduce((sum, p) => sum + p.wrong, 0);
+      const known = words.filter(w => score(w) >= 3).length;
+      const due = words.filter(isDue).length;
+      document.querySelector("#knownCount").textContent = known;
+      document.querySelector("#practiceCount").textContent = `${due}/${right + wrong}`;
+      document.querySelector("#accuracy").textContent = right + wrong ? `${Math.round(right / (right + wrong) * 100)}%` : "0%";
+    }
+
+    function initTopics() {
+      const topics = ["Alle Themen", ...new Set(words.map(w => w.topic))];
+      topicFilter.innerHTML = topics.map(topic => `<option>${topic}</option>`).join("");
+    }
+
+    function exportTSV() {
+      const lines = ["English\tDeutsch\tExample\tTopic", ...words.map(w => `${w.en}\t${w.de}\t${w.ex}\t${w.topic}`)];
+      const blob = new Blob([lines.join("\n")], {type: "text/tab-separated-values"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "across-cultures-3-vokabeln.tsv";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    document.querySelectorAll("[data-mode]").forEach(button => {
+      button.onclick = () => {
+        document.querySelectorAll("[data-mode]").forEach(b => b.classList.remove("active"));
+        button.classList.add("active");
+        state.mode = button.dataset.mode;
+        next();
+      };
+    });
+
+    topicFilter.onchange = () => { state.topic = topicFilter.value; next(); };
+    direction.onchange = () => { state.direction = direction.value; next(); };
+    dueOnly.onclick = () => {
+      state.dueOnly = !state.dueOnly;
+      dueOnly.classList.toggle("accent", state.dueOnly);
+      dueOnly.classList.toggle("ghost", !state.dueOnly);
+      next();
+    };
+    weakOnly.onclick = () => {
+      state.weakOnly = !state.weakOnly;
+      weakOnly.classList.toggle("accent", state.weakOnly);
+      weakOnly.classList.toggle("ghost", !state.weakOnly);
+      next();
+    };
+    document.querySelector("#exportBtn").onclick = exportTSV;
+    document.querySelector("#resetBtn").onclick = () => {
+      if (confirm("Fortschritt wirklich löschen?")) {
+        state.progress = {};
+        save();
+        next();
+      }
+    };
+
+    initTopics();
+    renderStats();
+    next();
+  </script>
+</body>
+</html>

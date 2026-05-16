@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Druckbögen Vokabeltraining</title>
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #5f6b7a;
+      --line: #cfd6df;
+      --soft: #f4f7f9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--ink);
+      background: white;
+      line-height: 1.45;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 16mm;
+      page-break-after: always;
+    }
+
+    h1 {
+      margin: 0 0 6mm;
+      font-size: 24pt;
+      line-height: 1.05;
+    }
+
+    h2 {
+      margin: 0 0 5mm;
+      font-size: 16pt;
+    }
+
+    p {
+      margin: 0 0 4mm;
+      color: var(--muted);
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4mm;
+      margin: 6mm 0;
+    }
+
+    .box {
+      border: 1px solid var(--line);
+      min-height: 12mm;
+      padding: 3mm;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 5mm;
+      font-size: 11pt;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 3mm;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--soft);
+      text-align: left;
+    }
+
+    .line {
+      height: 12mm;
+    }
+
+    .bigline {
+      height: 22mm;
+    }
+
+    .writing-lines {
+      display: grid;
+      gap: 5mm;
+      margin-top: 8mm;
+    }
+
+    .writing-lines div {
+      border-bottom: 1px solid var(--line);
+      height: 10mm;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 4mm;
+      margin-top: 6mm;
+    }
+
+    .checklist label {
+      display: grid;
+      grid-template-columns: 8mm 1fr;
+      gap: 3mm;
+    }
+
+    @media print {
+      body { margin: 0; }
+      .page { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <h1>10er-Vokabeltest</h1>
+    <p>Erst auf einem leeren Blatt oder hier handschriftlich schreiben. Danach in der App prüfen.</p>
+    <div class="meta">
+      <div class="box">Name:</div>
+      <div class="box">Datum:</div>
+      <div class="box">Richtung: DE → EN</div>
+    </div>
+    <table>
+      <thead><tr><th>Nr.</th><th>Deutsch / Aufgabe</th><th>Englisch</th><th>Korrektur</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td></td><td class="line"></td><td></td></tr>
+        <tr><td>2</td><td></td><td class="line"></td><td></td></tr>
+        <tr><td>3</td><td></td><td class="line"></td><td></td></tr>
+        <tr><td>4</td><td></td><td class="line"></td><td></td></tr>
+        <tr><td>5</td><td></td><td class="line"></td><td></td></tr>
+        <tr><td>6</td><td></td><td class="line"></td><td></td></tr>
+        <tr><td>7</td><td></td><td class="line"></td><td></td></tr>
+        <tr><td>8</td><td></td><td class="line"></td><td></td></tr>
+        <tr><td>9</td><td></td><td class="line"></td><td></td></tr>
+        <tr><td>10</td><td></td><td class="line"></td><td></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page">
+    <h1>20er-Vokabeltest</h1>
+    <p>Die Mutter kann die deutschen Bedeutungen diktieren oder aus der App vorlesen. Antworten zuerst handschriftlich.</p>
+    <div class="meta">
+      <div class="box">Name:</div>
+      <div class="box">Datum:</div>
+      <div class="box">Ergebnis:</div>
+    </div>
+    <table>
+      <thead><tr><th>Nr.</th><th>Antwort</th><th>richtig?</th><th>Fehlergrund</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>2</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>3</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>4</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>5</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>6</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>7</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>8</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>9</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>10</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>11</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>12</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>13</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>14</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>15</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>16</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>17</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>18</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>19</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>20</td><td class="line"></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page">
+    <h1>Fehlerliste</h1>
+    <p>Nur falsche oder unsichere Wörter eintragen. Jedes Wort wird am nächsten Tag erneut geschrieben.</p>
+    <table>
+      <thead><tr><th>Englisch</th><th>Deutsch</th><th>eigener Satz</th><th>Fehlergrund</th></tr></thead>
+      <tbody>
+        <tr><td class="line"></td><td></td><td></td><td>Rechtschreibung / Bedeutung / Form</td></tr>
+        <tr><td class="line"></td><td></td><td></td><td>Rechtschreibung / Bedeutung / Form</td></tr>
+        <tr><td class="line"></td><td></td><td></td><td>Rechtschreibung / Bedeutung / Form</td></tr>
+        <tr><td class="line"></td><td></td><td></td><td>Rechtschreibung / Bedeutung / Form</td></tr>
+        <tr><td class="line"></td><td></td><td></td><td>Rechtschreibung / Bedeutung / Form</td></tr>
+        <tr><td class="line"></td><td></td><td></td><td>Rechtschreibung / Bedeutung / Form</td></tr>
+        <tr><td class="line"></td><td></td><td></td><td>Rechtschreibung / Bedeutung / Form</td></tr>
+        <tr><td class="line"></td><td></td><td></td><td>Rechtschreibung / Bedeutung / Form</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page">
+    <h1>Eigene Sätze</h1>
+    <p>Ein Satz zählt nur, wenn das Wort sinnvoll benutzt wird. Lieber einfach und richtig als kompliziert und unsicher.</p>
+    <table>
+      <thead><tr><th>Wort</th><th>eigener englischer Satz</th><th>kontrolliert</th></tr></thead>
+      <tbody>
+        <tr><td></td><td class="bigline"></td><td></td></tr>
+        <tr><td></td><td class="bigline"></td><td></td></tr>
+        <tr><td></td><td class="bigline"></td><td></td></tr>
+        <tr><td></td><td class="bigline"></td><td></td></tr>
+        <tr><td></td><td class="bigline"></td><td></td></tr>
+        <tr><td></td><td class="bigline"></td><td></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page">
+    <h1>Mini-Arbeit Englisch</h1>
+    <p>Erst handschriftlich bearbeiten, danach mit der App gezielt die Fehlerbereiche wiederholen.</p>
+    <h2>Teil 1: Wortfamilien</h2>
+    <p>Setze die passende Wortform ein.</p>
+    <div class="writing-lines"><div></div><div></div><div></div><div></div></div>
+    <h2>Teil 2: Gerund / Infinitive</h2>
+    <p>Markiere das Auslöserwort und schreibe die richtige Form.</p>
+    <div class="writing-lines"><div></div><div></div><div></div><div></div></div>
+    <h2>Teil 3: Linking Words</h2>
+    <p>Verbinde zwei Ideen sinnvoll mit because, although, however, in order to, so that oder in case.</p>
+    <div class="writing-lines"><div></div><div></div><div></div></div>
+    <h2>Teil 4: Writing</h2>
+    <p>Schreibe 80-100 Wörter. Struktur: opinion, reason, example, conclusion.</p>
+    <div class="writing-lines"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div class="checklist">
+      <label><span>□</span><span>Ich habe zuerst auf Papier geplant.</span></label>
+      <label><span>□</span><span>Ich habe linking words markiert.</span></label>
+      <label><span>□</span><span>Ich habe Verben und Wortstellung kontrolliert.</span></label>
+    </div>
+  </section>
+
+  <section class="page">
+    <h1>Textanalyse-Raster</h1>
+    <p>Bei fiktionalen Texten immer erst Stichworte sammeln. Danach Antwortsätze schreiben.</p>
+    <table>
+      <thead><tr><th>Bereich</th><th>Text A</th><th>Text B</th><th>Belegwörter</th></tr></thead>
+      <tbody>
+        <tr><td>genre</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>setting</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>atmosphere</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>people</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>personal features</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>clothes</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>action</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>body language</td><td class="line"></td><td></td><td></td></tr>
+        <tr><td>suspense</td><td class="line"></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+    <h2>Antwortsätze</h2>
+    <p>Nutze Belegwörter. Keine Antwort ohne Beleg.</p>
+    <div class="writing-lines">
+      <div>The genre is ... because ...</div>
+      <div>The atmosphere is ... because the text says ...</div>
+      <div>Text ... is more suspenseful because ...</div>
+      <div>The photo matches text ... better because ...</div>
+      <div>I think text ... is more interesting because ...</div>
+    </div>
+  </section>
+</body>
+</html>
