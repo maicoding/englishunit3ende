@@ -35,7 +35,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'mile' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -88,7 +88,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'mysterious' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -140,7 +140,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'narrow' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -190,7 +190,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'opening' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -251,7 +251,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'all right' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -318,7 +318,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'off they went' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -369,7 +369,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'drive' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -420,7 +420,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to scratch' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -472,7 +472,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'backyard' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -524,7 +524,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'underneath' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -575,7 +575,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'sky' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -624,7 +624,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'raindrop' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -674,7 +674,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to ignore' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -725,7 +725,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'lightning' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -774,7 +774,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'thunder' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -823,7 +823,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'thunderstorm' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -882,7 +882,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'flash flood' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -933,7 +933,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'muscular' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -984,7 +984,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'headband' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1036,7 +1036,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'weak' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1096,7 +1096,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to get off' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1155,7 +1155,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to be missing' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1207,7 +1207,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'ecology' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1258,7 +1258,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'figure' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1335,7 +1335,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to speak out about sth' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1388,7 +1388,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'core' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1440,7 +1440,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'being' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1491,7 +1491,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'tear' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1543,7 +1543,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'ancestral' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1595,7 +1595,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'assimilation' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1645,7 +1645,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to assimilate' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1694,7 +1694,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'bill' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1743,7 +1743,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'honor' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1810,7 +1810,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'sense of belonging' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1860,7 +1860,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'spiritual' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1911,7 +1911,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'forced' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -1963,7 +1963,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'relocation' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2014,7 +2014,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'prejudice' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2064,7 +2064,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to expand' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2115,7 +2115,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to convert' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2164,7 +2164,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'Christianity' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2217,7 +2217,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'custom' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2269,7 +2269,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'teen' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2320,7 +2320,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'banner' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2380,7 +2380,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'burial shellmound' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2440,7 +2440,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'shopping mall' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2490,7 +2490,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'plaza' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2542,7 +2542,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to desecrate' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2591,7 +2591,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'grave' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2642,7 +2642,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'extinct' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2695,7 +2695,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'colonization' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2748,7 +2748,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'recognition' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2798,7 +2798,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to inter' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2848,7 +2848,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'remains' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2898,7 +2898,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to gather' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2947,7 +2947,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'shopper' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -2996,7 +2996,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'foster' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3047,7 +3047,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to smoke' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3098,7 +3098,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'luckily' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3150,7 +3150,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'powwow' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3200,7 +3200,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'effort' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3250,7 +3250,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'wisdom' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3301,7 +3301,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'separate' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3352,7 +3352,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'leaf' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3402,7 +3402,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to fold' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3451,7 +3451,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'string' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3503,7 +3503,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to untie' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3555,7 +3555,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'seed' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3604,7 +3604,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'genius' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3655,7 +3655,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'bean' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3704,7 +3704,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'squash' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3756,7 +3756,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'imagination' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3805,7 +3805,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'millennium' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3854,7 +3854,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to lay' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3904,7 +3904,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'square' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -3954,7 +3954,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'soil' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4004,7 +4004,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'shore' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4053,7 +4053,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'savage' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4102,7 +4102,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to farm' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4163,7 +4163,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'three-dimensional' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4215,7 +4215,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'abundance' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4265,7 +4265,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'yet' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4333,7 +4333,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to eat one's fill' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4382,7 +4382,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'firstborn' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4431,7 +4431,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'stiff' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4481,7 +4481,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'stem' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4532,7 +4532,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'growth' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4584,7 +4584,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'height' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4636,7 +4636,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'vertical' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4688,7 +4688,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'meanwhile' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4737,7 +4737,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'vine' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4786,7 +4786,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'bristly' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4837,7 +4837,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'caterpillar' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4887,7 +4887,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'base' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4936,7 +4936,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'moisture' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -4989,7 +4989,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'teaching' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5038,7 +5038,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'individuality' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5089,7 +5089,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to cherish' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5139,7 +5139,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to nurture' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5207,7 +5207,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'out here/there' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5258,7 +5258,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'materialistic' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5308,7 +5308,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'priority' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5360,7 +5360,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'controversy' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5412,7 +5412,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'acceptable' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5461,7 +5461,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to forbid' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5510,7 +5510,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'invisible' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5561,7 +5561,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'disrespectful' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5638,7 +5638,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to stay in touch with' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5687,7 +5687,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'mail' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5738,7 +5738,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'telegraph' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5787,7 +5787,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'telegram' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5838,7 +5838,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'east' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5899,7 +5899,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to connect to' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5949,7 +5949,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'express' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -5998,7 +5998,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'stamp' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6048,7 +6048,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'anniversary' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6097,7 +6097,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'Western' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6146,7 +6146,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'wolf' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6197,7 +6197,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'authentic' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6249,7 +6249,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'reality' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6298,7 +6298,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'obituary' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6347,7 +6347,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'sadness' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6407,7 +6407,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to look after' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6467,7 +6467,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to look at' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6527,7 +6527,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to look for' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6595,7 +6595,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to look forward to' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6655,7 +6655,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to look up' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6715,7 +6715,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to get back' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6774,7 +6774,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to get on' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6833,7 +6833,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to get sth' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6893,7 +6893,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to get to' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -6955,7 +6955,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to take off' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7017,7 +7017,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to take down' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7071,7 +7071,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'fictional' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7131,7 +7131,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'e-reader' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7182,7 +7182,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'bookworm' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7232,7 +7232,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'average' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7282,7 +7282,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'sequel' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7332,7 +7332,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'spy' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7385,7 +7385,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'invasion' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7438,7 +7438,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'operation' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7490,7 +7490,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'vengeance' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7540,7 +7540,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'reminder' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7599,7 +7599,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to get underway' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7650,7 +7650,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to reiterate' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7719,7 +7719,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'to be at stake' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7795,7 +7795,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'once and for all' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7847,7 +7847,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'knee' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7899,7 +7899,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'wicked' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7949,7 +7949,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'genre' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -7998,7 +7998,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'adventure' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8049,7 +8049,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'comics' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8101,7 +8101,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'crime' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8151,7 +8151,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'dystopia' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8201,7 +8201,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'fantasy' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8263,7 +8263,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'historical fiction' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8312,7 +8312,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'horror' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8362,7 +8362,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'mystery' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8414,7 +8414,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'romance' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8476,7 +8476,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'science fiction' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8537,7 +8537,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'teen comedy' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8586,7 +8586,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'drama' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8648,7 +8648,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'travel fiction' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8698,7 +8698,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'setting' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8750,7 +8750,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'atmosphere' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8811,7 +8811,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'personal features' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8870,7 +8870,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'body language' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8919,7 +8919,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'suspense' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -8969,7 +8969,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'woolen' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -9020,7 +9020,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'fabric' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -9069,7 +9069,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'pattern' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -9119,7 +9119,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'tipi' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -9169,7 +9169,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'herd' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -9218,7 +9218,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'buffalo' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -9277,7 +9277,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'totem pole' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -9330,7 +9330,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'longhouse' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -9382,7 +9382,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'approach' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -9432,7 +9432,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'then' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -9484,7 +9484,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'now' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -9536,7 +9536,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'diet' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",
@@ -9586,7 +9586,7 @@ window.ENGLISH_VOCAB_DATA = [
       "paper-check",
       "test"
     ],
-    "paperPrompt": "Schreibe 'monument' einmal sauber ab, darunter eine deutsche Bedeutung und einen eigenen englischen Mini-Satz.",
+    "paperPrompt": "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.",
     "errorTypes": [
       "meaning",
       "spelling",

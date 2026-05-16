@@ -744,6 +744,11 @@
         <option value="de-en">Deutsch → Englisch</option>
         <option value="en-de">Englisch → Deutsch</option>
       </select>
+      <select id="difficulty">
+        <option value="easy">Stufe 1 · Einprägen</option>
+        <option value="medium">Stufe 2 · Direkt schreiben</option>
+        <option value="hard">Stufe 3 · Test hart</option>
+      </select>
       <button class="ghost" id="dueOnly">Heute fällig</button>
       <button class="ghost" id="weakOnly">Nur schwache Wörter</button>
       <button class="ghost" id="exportBtn">Anki/Quizlet-Export</button>
@@ -1019,6 +1024,7 @@
       mode: "flash",
       topic: "Alle Themen",
       direction: "de-en",
+      difficulty: "easy",
       dueOnly: false,
       weakOnly: false,
       current: null,
@@ -1029,6 +1035,7 @@
 
     const topicFilter = document.querySelector("#topicFilter");
     const direction = document.querySelector("#direction");
+    const difficulty = document.querySelector("#difficulty");
     const dueOnly = document.querySelector("#dueOnly");
     const weakOnly = document.querySelector("#weakOnly");
     const exercise = document.querySelector("#exercise");
@@ -1404,17 +1411,24 @@
 
     function renderPaperCheck(word) {
       state.answered = false;
+      const canPreview = state.difficulty === "easy";
+      const startPrompt = canPreview
+        ? "Präge dir das Wort ein. Drücke dann auf „Auf Papier schreiben“."
+        : "Schreibe die englische Vokabel direkt aus dem Gedächtnis auf.";
+      const writePrompt = state.difficulty === "hard"
+        ? "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung. Wenn du sicher bist: ein eigener kurzer englischer Satz."
+        : "Schreibe die englische Vokabel aus dem Gedächtnis auf. Darunter: deutsche Bedeutung.";
       exercise.innerHTML = `
         <article class="card">
           <span class="tag">Papier-Check</span>
           <div class="translation">${word.de}</div>
           ${metaLine(word)}
-          <div class="word" id="paperWord">${word.en}</div>
-          <p class="example" id="paperPrompt">Präge dir das Wort ein. Drücke dann auf „Auf Papier schreiben“.</p>
+          <div class="word" id="paperWord" ${canPreview ? "" : "hidden"}>${word.en}</div>
+          <p class="example" id="paperPrompt">${startPrompt}</p>
           <p class="mini" hidden>Vergleiche streng: Ist das Wort ganz falsch, oder stimmt die Bedeutung und nur die Schreibweise ist falsch?</p>
         </article>
         <div class="actions">
-          <button class="accent" id="startPaper">Auf Papier schreiben</button>
+          <button class="accent" id="startPaper">${canPreview ? "Auf Papier schreiben" : "Jetzt schreiben"}</button>
           <button class="accent" id="showPaperAnswer" hidden>Lösung wieder zeigen</button>
           <button class="ghost" id="paperOk" disabled>richtig geschrieben</button>
           <button class="ghost" id="paperSpelling" disabled>nur Schreibfehler</button>
@@ -1423,7 +1437,7 @@
       `;
       document.querySelector("#startPaper").onclick = () => {
         document.querySelector("#paperWord").hidden = true;
-        document.querySelector("#paperPrompt").textContent = word.paperPrompt || "Schreibe die englische Vokabel jetzt auf ein leeres Blatt.";
+        document.querySelector("#paperPrompt").textContent = writePrompt;
         document.querySelector("#startPaper").hidden = true;
         document.querySelector("#showPaperAnswer").hidden = false;
       };
@@ -1814,6 +1828,7 @@
 
     topicFilter.onchange = () => { state.topic = topicFilter.value; next(); };
     direction.onchange = () => { state.direction = direction.value; next(); };
+    difficulty.onchange = () => { state.difficulty = difficulty.value; next(); };
     dueOnly.onclick = () => {
       state.dueOnly = !state.dueOnly;
       dueOnly.classList.toggle("accent", state.dueOnly);
