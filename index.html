@@ -1351,6 +1351,7 @@
 
     function clozeText(word) {
       if (word.cloze && word.cloze.includes("[...]")) return word.cloze.replace("[...]", "_____");
+      if (word.cloze && word.cloze.includes("___")) return word.cloze.replace(/_{3,}/g, "_____");
       const source = word.ex || "";
       const answer = word.clozeAnswer || word.en;
       const blanked = source.replace(new RegExp(answer.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"), "_____");
@@ -1372,6 +1373,20 @@
 
     function clozeAcceptedAnswers(word) {
       return [...new Set([word.en, word.clozeAnswer, clozeAnswerForDisplay(word)].filter(Boolean))].join(";");
+    }
+
+    function shouldHideEnglishHints() {
+      return state.direction === "de-en" && state.difficulty !== "easy";
+    }
+
+    function maskedExample(word) {
+      if (!shouldHideEnglishHints()) return word.ex;
+      return clozeText(word).replaceAll("_____", "[...]");
+    }
+
+    function exampleBlock(word) {
+      const text = maskedExample(word);
+      return text ? `<p class="example">${text}</p>` : "";
     }
 
     function exactSpelling(input, expected) {
@@ -1460,9 +1475,8 @@
           <div class="word">${promptOf(word)}</div>
           ${metaLine(word)}
           <div class="translation" hidden>${answerOf(word)}</div>
-          <p class="example">${word.ex}</p>
-          <p class="mini">Leeres Blatt: Schreibe erst deine Antwort auf. Danach wähle hier aus.</p>
-          <p class="mini">Papier-Regel: Antwort erst mit der Hand schreiben, dann hier aufdecken.</p>
+          ${exampleBlock(word)}
+          <p class="mini">Schreibe erst deine Antwort auf ein leeres Blatt. Danach aufdecken und selbst bewerten.</p>
         </article>
         <div class="actions">
           <button class="accent" id="showAnswer">Antwort zeigen</button>
@@ -1496,7 +1510,7 @@
         <article class="card">
           <span class="tag">${word.topic}</span>
           <div class="word">${promptOf(word)}</div>
-          <p class="example">${word.ex}</p>
+          ${exampleBlock(word)}
           <div class="choices">
             ${options.map(option => `<button data-option="${option.replaceAll('"', '&quot;')}">${option}</button>`).join("")}
           </div>
