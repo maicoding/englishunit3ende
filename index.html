@@ -568,8 +568,8 @@
     <section class="toolbar" aria-label="Filter">
       <select id="topicFilter"></select>
       <select id="direction">
-        <option value="en-de">Englisch → Deutsch</option>
         <option value="de-en">Deutsch → Englisch</option>
+        <option value="en-de">Englisch → Deutsch</option>
       </select>
       <button class="ghost" id="dueOnly">Heute fällig</button>
       <button class="ghost" id="weakOnly">Nur schwache Wörter</button>
@@ -845,7 +845,7 @@
     const state = {
       mode: "flash",
       topic: "Alle Themen",
-      direction: "en-de",
+      direction: "de-en",
       dueOnly: false,
       weakOnly: false,
       current: null,
