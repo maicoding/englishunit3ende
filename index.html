@@ -1350,6 +1350,23 @@
       return blanked.includes("_____") ? blanked : `${source} → _____`;
     }
 
+    function capitalizeFirst(value) {
+      return value ? value.charAt(0).toUpperCase() + value.slice(1) : value;
+    }
+
+    function isClozeAtSentenceStart(word) {
+      return clozeText(word).trim().startsWith("_____");
+    }
+
+    function clozeAnswerForDisplay(word) {
+      const answer = word.clozeAnswer || word.en;
+      return isClozeAtSentenceStart(word) ? capitalizeFirst(answer) : answer;
+    }
+
+    function clozeAcceptedAnswers(word) {
+      return [...new Set([word.en, word.clozeAnswer, clozeAnswerForDisplay(word)].filter(Boolean))].join(";");
+    }
+
     function exactSpelling(input, expected) {
       return input.trim().toLowerCase() === expected.trim().toLowerCase();
     }
@@ -1515,15 +1532,15 @@
       document.querySelector("#checkBtn").onclick = () => {
         if (state.answered) return;
         const value = document.querySelector("#clozeInput").value;
-        const ok = acceptAnswer(value, word.en);
+        const ok = acceptAnswer(value, clozeAcceptedAnswers(word));
         record(word, ok);
         state.answered = true;
         document.querySelector("#feedback").className = `feedback ${ok ? "good" : "bad"}`;
-        document.querySelector("#feedback").textContent = ok ? "Richtig benutzt." : `Lösung: ${word.en}`;
+        document.querySelector("#feedback").textContent = ok ? "Richtig benutzt." : `Lösung: ${clozeAnswerForDisplay(word)}`;
       };
       document.querySelector("#solutionBtn").onclick = () => {
         document.querySelector("#feedback").className = "feedback";
-        document.querySelector("#feedback").textContent = `${word.en} = ${word.de}`;
+        document.querySelector("#feedback").textContent = `${clozeAnswerForDisplay(word)} = ${word.de}`;
       };
       document.querySelector("#nextBtn").onclick = () => {
         if (state.answered) renderPaperCheck(word);
